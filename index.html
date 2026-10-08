@@ -1,0 +1,1681 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[PROGRAM NAME] | [UNIVERSITY NAME] x Accredian</title>
+<meta name="description" content="[PROGRAM NAME] by [UNIVERSITY NAME] with Accredian as learning partner. A [X MONTHS] executive program for senior [TARGET ROLE] leaders.">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!--
+=====================================================================
+HOW TO USE THIS TEMPLATE
+1. Search the file for "[" to find every placeholder. Nothing here is real data.
+2. Replace image placeholders (div.ph) with:
+   <img src="[IMAGE_URL]" alt="..." loading="lazy" width="W" height="H">
+3. Counters: any element with class "cnt" animates automatically once its text
+   starts with a number (e.g. "42", "4.8/5", "12,500+"). Placeholders stay as text.
+4. Configuration (form endpoint, fee, EMI, WhatsApp) lives in the CONFIG object
+   at the top of the script block.
+5. Components marked "Sample: replace with verified data" must be swapped or deleted.
+=====================================================================
+-->
+
+<style>
+:root{
+  --navy:#0B1F3A; --navy-2:#13294B; --navy-3:#1D3A63;
+  --ink:#14213D; --text:#2B3445; --muted:#5B6578; --line:#E1E6EE;
+  --bg:#FFFFFF; --soft:#F4F6FA; --soft-2:#EAEFF6;
+  --accent:#F2A93B; --accent-h:#E59A24; --accent-ink:#0B1F3A; /* accent is used for CTAs only */
+  --ok:#1D6B4F; --bad:#9A3A3A;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --r:14px; --shadow:0 10px 30px rgba(11,31,58,.10);
+  --head:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.6;font-size:16px;overflow-x:hidden}
+img,svg{max-width:100%}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);line-height:1.2;margin:0 0 .5em;font-weight:600}
+h1{font-size:clamp(30px,6vw,52px)}
+h2{font-size:clamp(26px,4.4vw,40px)}
+h3{font-size:clamp(19px,2.4vw,23px)}
+p{margin:0 0 1em}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:8px;top:-60px;background:#fff;color:var(--navy);padding:10px 14px;z-index:300;border-radius:8px}
+.skip:focus{top:8px}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 16px}
+section{padding:64px 0;scroll-margin-top:var(--head)}
+.dark{background:var(--navy);color:#DCE5F2}
+.dark h2,.dark h3,.dark h4{color:#fff}
+.soft{background:var(--soft)}
+.eyebrow{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--navy-3);margin-bottom:12px}
+.dark .eyebrow{color:#9FB6D6}
+.lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:720px}
+.dark .lead{color:#B9C8DE}
+.sec-head{margin-bottom:34px}
+.center{text-align:center}.center .lead{margin-inline:auto}
+.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.i.fill{fill:currentColor;stroke:none}
+
+/* Buttons: ONE look for every CTA */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border:0;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:16px;text-decoration:none;transition:transform .18s,box-shadow .18s,background .18s;box-shadow:0 4px 14px rgba(242,169,59,.35)}
+.btn:hover{background:var(--accent-h);transform:translateY(-2px);box-shadow:0 8px 20px rgba(242,169,59,.45)}
+.btn:active{transform:translateY(0)}
+.btn.block{width:100%}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.cta-strip{margin-top:44px;border-radius:var(--r);background:var(--navy);color:#fff;padding:28px 22px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.cta-strip p{margin:0;font-family:var(--serif);font-size:clamp(19px,2.6vw,26px);line-height:1.35;color:#fff}
+.after-cta{margin-top:34px}
+
+/* Cards, grids */
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:minmax(0,1fr)}.g3{grid-template-columns:minmax(0,1fr)}.g4{grid-template-columns:1fr 1fr}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#C9D3E3}
+.dark .card{background:var(--navy-2);border-color:#27426B;color:#DCE5F2}
+.dark .card:hover{border-color:#4A6A99}
+.ph{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-size:12px;font-weight:600;letter-spacing:.04em;color:#5B6B85;background:repeating-linear-gradient(135deg,#EDF1F7 0 12px,#E4EAF3 12px 24px);border:1px dashed #AEBBD0;border-radius:10px;min-height:48px;overflow:hidden}
+.dark .ph{background:repeating-linear-gradient(135deg,#183154 0 12px,#142B4B 12px 24px);border-color:#3A5886;color:#A9BCD8}
+.badge-s{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:999px;background:var(--soft-2);color:var(--navy-3)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;min-height:40px;transition:background .15s,color .15s,border-color .15s}
+.chip:hover{border-color:var(--navy-3)}
+.chip[aria-pressed="true"],.chip[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.logos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.logos .ph{min-height:54px;font-size:11px}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:12px;width:max-content;animation:mq 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee .ph{width:150px;min-height:56px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* Trust mini strip (layered trust) */
+.trust-mini{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;font-weight:600;color:var(--navy-3);padding:12px 0}
+.trust-mini span{display:inline-flex;align-items:center;gap:6px}
+.trust-mini b{color:var(--ink)}
+.dark .trust-mini{color:#9FB6D6}.dark .trust-mini b{color:#fff}
+.stars{display:inline-flex;gap:2px;color:var(--navy-3)}
+.stars .i{width:16px;height:16px}
+.dark .stars{color:#fff}
+
+/* Header + progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--navy-3);z-index:200}
+header.site{position:sticky;top:0;z-index:150;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);height:var(--head)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:100%;gap:12px}
+.logo-pair{display:flex;align-items:center;gap:10px;min-width:0}
+.logo-pair .ph{min-height:36px;width:92px;font-size:10px;padding:2px}
+.logo-pair .x{color:var(--muted);font-size:13px}
+nav.main{display:none;gap:22px;font-size:14px;font-weight:500}
+nav.main a{text-decoration:none;color:var(--ink);padding:6px 2px;border-bottom:2px solid transparent}
+nav.main a:hover{border-color:var(--navy-3)}
+header.site .btn{min-height:42px;padding:8px 18px;font-size:15px}
+
+/* Hero */
+#hero{padding:36px 0 48px;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 70%);color:#DCE5F2;scroll-margin-top:0}
+#hero h1{color:#fff;margin-bottom:14px}
+.hero-grid{display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}.hero-grid>*{min-width:0}
+.hero-badges{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:18px}
+.hero-badges .ph{min-height:44px;padding:4px 12px;font-size:11px}
+.pointers{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:10px}
+.pointers li{display:flex;gap:10px;align-items:flex-start;font-size:17px;color:#E6EDF8}
+.pointers .i{margin-top:3px;color:#9FB6D6}
+.info-strip{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2A4670;border:1px solid #2A4670;border-radius:12px;overflow:hidden;margin:22px 0}
+.info-strip div{background:var(--navy-2);padding:12px 14px;font-size:13px}
+.info-strip small{display:block;color:#9FB6D6;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.info-strip b{color:#fff;font-size:15px}
+.stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:6px}
+.stat{background:rgba(255,255,255,.06);border:1px solid #2A4670;border-radius:12px;padding:12px;text-align:center}
+.stat b,.kpi b{overflow-wrap:anywhere}.stat b{display:block;font-size:clamp(15px,4vw,28px)!important;font-family:var(--serif);font-size:clamp(20px,4vw,28px);color:#fff;line-height:1.2}
+.stat small{font-size:12px;color:#B9C8DE}
+.hero-media{position:relative;margin-top:6px}
+.hero-media .ph{aspect-ratio:16/10;font-size:13px}
+.play{position:absolute;inset:0;margin:auto;width:72px;height:72px;border-radius:50%;border:0;background:#fff;color:var(--navy);display:grid;place-items:center;box-shadow:0 8px 28px rgba(0,0,0,.35);transition:transform .2s}
+.play:hover{transform:scale(1.08)}
+.play .i{width:30px;height:30px;margin-left:4px}
+.hero-form{display:none}
+.form-box{background:#fff;color:var(--text);border-radius:var(--r);padding:22px;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.form-box h3{margin-bottom:4px}
+.form-box .sub{font-size:14px;color:var(--muted);margin-bottom:14px}
+
+/* Forms */
+.fprog{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:12px;font-weight:600;color:var(--muted)}
+.fprog .bar{flex:1;height:6px;background:var(--soft-2);border-radius:99px;overflow:hidden}
+.fprog .bar i{display:block;height:100%;width:50%;background:var(--navy-3);transition:width .3s}
+.fld{margin-bottom:12px}
+.fld label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.fld input,.fld select{width:100%;min-height:48px;padding:10px 12px;border:1.5px solid #C6CFDD;border-radius:10px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+.fld input:focus,.fld select:focus{border-color:var(--navy-3);outline:none;box-shadow:0 0 0 3px rgba(29,58,99,.18)}
+.fld.bad input,.fld.bad select{border-color:var(--bad)}
+.fld .err{display:none;color:var(--bad);font-size:12px;margin-top:3px}
+.fld.bad .err{display:block}
+.phone{display:flex}
+.phone span{display:grid;place-items:center;padding:0 12px;background:var(--soft-2);border:1.5px solid #C6CFDD;border-right:0;border-radius:10px 0 0 10px;font-weight:600;color:var(--ink)}
+.phone input{border-radius:0 10px 10px 0}
+.f-actions{display:flex;gap:10px}
+.f-actions .back{flex:none;min-height:48px;padding:0 16px;border:1.5px solid #C6CFDD;background:#fff;border-radius:10px;font-weight:600;color:var(--ink)}
+.f-note{font-size:12px;color:var(--muted);margin:10px 0 0}
+.f-ok{text-align:center;padding:10px 0}
+.f-ok .tick{width:56px;height:56px;border-radius:50%;background:#E3F3EB;color:var(--ok);display:grid;place-items:center;margin:0 auto 12px}
+.f-ok .tick .i{width:28px;height:28px}
+
+/* Modal + lightbox */
+.overlay{position:fixed;inset:0;background:rgba(7,16,32,.72);z-index:250;display:none;align-items:center;justify-content:center;padding:14px}
+.overlay.open{display:flex}
+.modal{position:relative;width:100%;max-width:440px;max-height:92vh;overflow:auto;background:#fff;border-radius:16px;padding:24px 20px;animation:pop .25s ease}
+.modal.wide{max-width:900px;padding:0;background:#000}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.x-btn{position:absolute;top:8px;right:8px;width:44px;height:44px;border-radius:50%;border:0;background:var(--soft-2);color:var(--ink);display:grid;place-items:center;z-index:2}
+.modal.wide .x-btn{background:#fff}
+.lb-body{padding:0}
+.lb-body .ph{aspect-ratio:16/9;min-height:220px;font-size:14px;border-radius:0}
+.lb-body iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+.lb-cap{background:#fff;padding:12px 16px;font-size:14px}
+
+/* S1 audience */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px;scrollbar-width:thin}
+.tab{flex:none;border:1px solid var(--line);background:#fff;padding:10px 16px;border-radius:999px;font-weight:600;color:var(--ink);min-height:44px}
+.tab[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabpanel{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.tabpanel[hidden]{display:none}
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.ticks li{display:flex;gap:10px;align-items:flex-start}
+.ticks .i{margin-top:3px;color:var(--ok)}
+.ticks.no .i{color:var(--bad)}
+.facts{display:grid;gap:12px;grid-template-columns:1fr}
+.fact small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.fact b{color:var(--ink)}
+
+/* S2 */
+.news{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px}
+.news .card{flex:0 0 78%;scroll-snap-align:start}
+.news small{color:var(--muted)}
+.dark .news small{color:#9FB6D6}
+.bigstat b{display:block;font-family:var(--serif);font-size:clamp(30px,5vw,44px);color:#fff;line-height:1.1}
+
+/* S3 transform */
+.switch{display:inline-flex;background:var(--soft-2);border-radius:999px;padding:4px;margin-bottom:22px}
+.switch button{border:0;background:transparent;padding:10px 22px;border-radius:999px;font-weight:700;color:var(--ink);min-height:44px}
+.switch button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.flip{position:relative;cursor:pointer;min-height:190px;text-align:left;width:100%;font:inherit;color:inherit}
+.flip .side{transition:opacity .35s,transform .35s}
+.flip .after{position:absolute;inset:22px;opacity:0;transform:translateY(10px)}
+.flip.on .before{opacity:0;transform:translateY(-10px)}
+.flip.on .after{opacity:1;transform:none}
+.flip small{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.flip .before small{color:var(--bad)}.flip .after small{color:var(--ok)}
+.flip.on{border-color:var(--navy-3);background:#F7FAFF}
+
+/* S4 quiz */
+.quiz{max-width:760px;margin:0 auto}
+.q-item{display:flex;gap:14px;align-items:center;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;margin-bottom:10px;cursor:pointer;min-height:56px;transition:border-color .15s,background .15s}
+.q-item:hover{border-color:var(--navy-3)}
+.q-item input{position:absolute;opacity:0}
+.q-item .box{width:26px;height:26px;border:2px solid #9AA9C0;border-radius:7px;display:grid;place-items:center;flex:none;color:transparent;transition:.15s}
+.q-item input:checked ~ .box{background:var(--navy);border-color:var(--navy);color:#fff}
+.q-item input:checked ~ .txt{color:var(--ink);font-weight:600}
+.q-item input:focus-visible ~ .box{outline:3px solid var(--accent);outline-offset:2px}
+.q-item:has(input:checked){border-color:var(--navy);background:#F4F8FF}
+.result{display:none;margin-top:24px;background:var(--navy);color:#fff;border-radius:var(--r);padding:24px}
+.result.show{display:block;animation:pop .35s}
+.result h3{color:#fff}
+.meter{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:14px 0}
+.meter i{height:12px;border-radius:99px;background:#2A4670;transition:background .3s}
+.meter i.on{background:#fff}
+.score-n{font-family:var(--serif);font-size:44px;line-height:1}
+
+/* S5 */
+.hl{position:relative;overflow:hidden}
+.hl .ic{width:46px;height:46px;border-radius:12px;background:var(--soft-2);color:var(--navy-3);display:grid;place-items:center;margin-bottom:12px}
+.hl p{margin:0;color:var(--muted);font-size:15px}
+.hl .more{max-height:0;opacity:0;overflow:hidden;transition:max-height .3s,opacity .3s;font-size:14px;color:var(--text);margin-top:0}
+.hl:hover .more,.hl:focus-within .more,.hl.open .more{max-height:120px;opacity:1;margin-top:10px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+thead th{background:var(--navy);color:#fff;font-weight:600}
+td.c,th.c{text-align:center;width:150px}
+tbody tr:hover{background:var(--soft)}
+.yes{color:var(--ok)}.no{color:var(--bad)}
+
+/* S6 */
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.kpi{text-align:center;padding:20px 10px}
+.kpi b{display:block;font-family:var(--serif);font-size:clamp(18px,5vw,34px);color:var(--ink)}
+.kpi small{color:var(--muted)}
+.featured{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+
+/* S7 faculty */
+.fac .ph.pic{aspect-ratio:1/1;margin-bottom:12px}
+.fac h3{margin-bottom:2px;font-size:19px}
+.fac .role{font-size:14px;color:var(--muted);margin-bottom:8px}
+.fac .tog{margin-top:10px;border:0;background:transparent;color:var(--navy-3);font-weight:700;padding:8px 0;min-height:44px;display:inline-flex;align-items:center;gap:6px}
+.fac .tog .i{transition:transform .2s}
+.fac .tog[aria-expanded="true"] .i{transform:rotate(180deg)}
+.fac .more{display:none;font-size:14px;border-top:1px solid var(--line);padding-top:12px}
+.fac .more.open{display:block}
+.fac .logos{margin-top:10px}
+
+/* S8 curriculum */
+.rail{display:flex;gap:0;overflow-x:auto;padding:6px 0 18px;margin-bottom:10px}
+.node{flex:1 0 96px;position:relative;text-align:center;border:0;background:none;padding:0 4px;color:var(--ink)}
+.node::before{content:"";position:absolute;top:19px;left:-50%;width:100%;height:3px;background:var(--line)}
+.node:first-child::before{display:none}
+.node .dot{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;background:#fff;border:3px solid var(--navy-3);margin:0 auto 8px;display:grid;place-items:center;font-weight:700;font-size:14px;transition:.2s}
+.node:hover .dot,.node.on .dot{background:var(--navy);color:#fff}
+.node span{display:block;font-size:12px;font-weight:600;line-height:1.3}
+details.mod{background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-bottom:12px;overflow:hidden}
+details.mod[open]{border-color:var(--navy-3);box-shadow:var(--shadow)}
+details.mod>summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;gap:14px;align-items:center;min-height:64px}
+details.mod>summary::-webkit-details-marker{display:none}
+details.mod>summary .n{flex:none;width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700}
+details.mod>summary b{font-family:var(--serif);font-size:18px;color:var(--ink);display:block}
+details.mod>summary small{color:var(--muted)}
+details.mod>summary .i{margin-left:auto;transition:transform .2s}
+details.mod[open]>summary .i{transform:rotate(180deg)}
+.mod-body{padding:0 20px 20px;display:grid;gap:14px}
+.mod-body h4{font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-3);margin-bottom:6px}
+details.wk{border-top:1px dashed var(--line);padding-top:10px}
+details.wk summary{cursor:pointer;font-weight:700;color:var(--navy-3);min-height:44px;display:flex;align-items:center}
+details.wk ul{margin:6px 0 0;padding-left:20px}
+
+/* S9 */
+.proj{display:flex;flex-direction:column;gap:8px}
+.proj[hidden]{display:none}
+.tool{position:relative;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;padding:16px 10px;border:1px solid #27426B;border-radius:12px;background:var(--navy-2);outline-offset:2px;cursor:default}
+.tool .ph{width:100%;min-height:50px}
+.tool b{color:#fff;font-size:14px}
+.tool .tip{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(4px);width:200px;max-width:70vw;background:#fff;color:var(--ink);padding:10px 12px;border-radius:10px;font-size:13px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s;z-index:5;text-align:left}
+.tool:hover .tip,.tool:focus .tip{opacity:1;transform:translateX(-50%)}
+.tool:hover{border-color:#6F8FBF}
+
+/* S10 certificate */
+.cert{cursor:zoom-in;position:relative;border:0;padding:0;background:none;width:100%;display:block}
+.cert .ph{aspect-ratio:4/3;font-size:14px}
+.cert .zoom{position:absolute;right:10px;bottom:10px;background:#fff;color:var(--ink);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;display:flex;gap:6px;align-items:center}
+
+/* S11 gallery */
+.masonry{columns:2;column-gap:12px}
+.masonry button{display:block;width:100%;border:0;padding:0;background:none;margin-bottom:12px;break-inside:avoid;cursor:zoom-in;transition:transform .2s}
+.masonry button:hover{transform:scale(1.02)}
+.masonry button[hidden]{display:none}
+
+/* S12 testimonials */
+.carousel-ctl{display:flex;gap:8px;margin-bottom:12px}
+.carousel-ctl button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);display:grid;place-items:center}
+.carousel-ctl button:hover{background:var(--navy);color:#fff}
+.carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;scrollbar-width:thin}
+.carousel>.card{flex:0 0 86%;scroll-snap-align:start;display:flex;flex-direction:column;gap:10px}
+.vthumb{position:relative;border:0;padding:0;background:none;width:100%;cursor:pointer}
+.vthumb .ph{aspect-ratio:16/9}
+.vthumb .play{width:54px;height:54px}
+.vthumb .play .i{width:22px;height:22px}
+.quote{font-family:var(--serif);font-size:18px;color:var(--ink);line-height:1.45;margin:0}
+.who{font-size:13px;color:var(--muted)}
+
+/* S13 transitions */
+.tr{position:relative;overflow:hidden}
+.tr-row{display:grid;grid-template-columns:1fr 30px 1fr;gap:6px;align-items:center;margin:12px 0}
+.tr-b,.tr-a{padding:12px;border-radius:10px;font-size:14px;transition:.5s}
+.tr-b{background:var(--soft);color:var(--muted)}
+.tr-a{background:var(--soft);color:var(--muted);opacity:.45;transform:translateX(-10px)}
+.tr-arrow{color:var(--navy-3);text-align:center;font-weight:700}
+.tr.in .tr-a,.tr:hover .tr-a{background:var(--navy);color:#fff;opacity:1;transform:none}
+.tr.in .tr-b,.tr:hover .tr-b{opacity:.7}
+.tr small{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.tr .meta{font-size:13px;color:var(--muted)}
+.tr .badge-s{position:absolute;top:10px;right:10px}
+
+/* S14 fees */
+.why-inv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:26px}
+.why-inv div{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+.why-inv .i{color:var(--ok)}
+.fee-total{font-family:var(--serif);font-size:clamp(32px,6vw,48px);color:var(--ink);line-height:1.1}
+.emi button.chip{min-width:84px}
+.emi-out{margin-top:14px;background:var(--soft);border-radius:12px;padding:16px}
+.emi-out b{font-family:var(--serif);font-size:30px;color:var(--ink)}
+details.exp{border:1px solid var(--line);border-radius:12px;background:#fff;margin-top:14px}
+details.exp summary{cursor:pointer;padding:14px 16px;font-weight:700;color:var(--ink);min-height:48px;display:flex;align-items:center;gap:8px}
+details.exp .in-b{padding:0 16px 16px;font-size:15px}
+.dl-link{background:none;border:0;padding:0;color:var(--navy-3);font-weight:700;text-decoration:underline;min-height:44px}
+
+/* S15 eligibility */
+.elig{max-width:820px;margin:0 auto}
+.elig-res{display:none;margin-top:18px}
+.elig-res.show{display:block;animation:pop .3s}
+.pill{display:inline-block;padding:6px 14px;border-radius:999px;font-weight:700;font-size:14px}
+.pill.ok{background:#E3F3EB;color:var(--ok)}.pill.maybe{background:#FFF1D6;color:#7A5200}
+
+/* S16 stepper */
+.stepper{display:grid;gap:18px;counter-reset:s}
+.step{position:relative;padding-left:62px;opacity:.35;transition:opacity .5s,transform .5s;transform:translateX(-10px)}
+.step.on{opacity:1;transform:none}
+.step .num{position:absolute;left:0;top:0;width:46px;height:46px;border-radius:50%;background:#fff;border:3px solid var(--navy-3);display:grid;place-items:center;font-weight:700;color:var(--ink);transition:.4s}
+.step.on .num{background:var(--navy);color:#fff}
+.step::after{content:"";position:absolute;left:22px;top:50px;bottom:-18px;width:3px;background:var(--line)}
+.step:last-child::after{display:none}
+.step h3{margin-bottom:4px;font-size:20px}.step p{margin:0;color:var(--muted);font-size:15px}
+
+/* S17 FAQ */
+.faq-search{width:100%;min-height:52px;padding:12px 16px;border:1.5px solid #C6CFDD;border-radius:12px;font:inherit;font-size:16px;margin-bottom:16px}
+.faq-search:focus{outline:none;border-color:var(--navy-3);box-shadow:0 0 0 3px rgba(29,58,99,.18)}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+details.faq[hidden]{display:none}
+details.faq summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:600;color:var(--ink);display:flex;gap:12px;justify-content:space-between;align-items:center;min-height:56px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary .i{transition:transform .2s;flex:none}
+details.faq[open] summary .i{transform:rotate(180deg)}
+details.faq .a{padding:0 18px 16px;color:var(--text)}
+.faq-end{margin-top:26px;text-align:center}
+.faq-end .cta-row{justify-content:center}
+
+/* Footer */
+footer{background:#08162B;color:#AFC0D8;padding:48px 0 110px;font-size:14px}
+footer h4{color:#fff;font-family:var(--sans);font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.disc{border-top:1px solid #1D3050;margin-top:28px;padding-top:18px;font-size:12px;color:#8DA0BD}
+
+/* Sticky mobile bar + chat */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:140;display:grid;grid-template-columns:1fr 52px 52px;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(11,31,58,.1)}
+.mbar .sq{display:grid;place-items:center;border-radius:10px;background:var(--navy);color:#fff;text-decoration:none;min-height:48px}
+.chat-fab{position:fixed;right:14px;bottom:84px;z-index:145;width:56px;height:56px;border-radius:50%;border:0;background:var(--navy);color:#fff;box-shadow:0 8px 24px rgba(11,31,58,.4);display:grid;place-items:center}
+.chat-fab:hover{background:var(--navy-3)}
+.chat{position:fixed;right:12px;bottom:150px;z-index:146;width:min(340px,calc(100vw - 24px));max-height:70vh;background:#fff;border-radius:16px;box-shadow:0 18px 50px rgba(11,31,58,.35);display:none;flex-direction:column;overflow:hidden}
+.chat.open{display:flex;animation:pop .25s}
+.chat-h{background:var(--navy);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.chat-h button{background:none;border:0;color:#fff;width:44px;height:44px;margin:-10px -10px -10px 0}
+.chat-b{padding:14px;overflow:auto;display:flex;flex-direction:column;gap:10px;flex:1;min-height:160px}
+.msg{max-width:88%;padding:10px 12px;border-radius:12px;font-size:14px}
+.msg.bot{background:var(--soft-2);color:var(--ink);align-self:flex-start}
+.msg.me{background:var(--navy);color:#fff;align-self:flex-end}
+.chat-q{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px 14px;border-top:1px solid var(--line)}
+.chat-q .chip{font-size:13px}
+
+@media (max-width:599px){.tool .tip{width:170px}.tool:nth-child(odd) .tip{left:0;transform:translateY(4px)}.tool:nth-child(even) .tip{left:auto;right:0;transform:translateY(4px)}.tool:nth-child(odd):hover .tip,.tool:nth-child(odd):focus .tip,.tool:nth-child(even):hover .tip,.tool:nth-child(even):focus .tip{transform:none}}
+@media (min-width:600px){
+  .g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}.g4{grid-template-columns:repeat(4,1fr)}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .logos{grid-template-columns:repeat(4,1fr)}
+  .masonry{columns:3}
+  .carousel>.card{flex-basis:46%}.news .card{flex-basis:46%}
+  .why-inv{grid-template-columns:repeat(3,1fr)}
+  .kpis{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .featured{grid-template-columns:repeat(4,1fr)}
+  .cta-strip{flex-direction:row;align-items:center;justify-content:space-between;padding:30px}
+}
+@media (min-width:960px){
+  section{padding:88px 0}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  nav.main{display:flex}
+  .hero-grid{grid-template-columns:1.25fr .85fr;align-items:start;gap:44px}
+  .hero-form{display:block;position:sticky;top:calc(var(--head) + 16px)}
+  .hero-ctas-m{display:flex}
+  .info-strip{grid-template-columns:repeat(4,1fr)}
+  .masonry{columns:4}
+  .carousel>.card{flex-basis:31%}.news .card{flex-basis:31%}
+  .stepper{grid-template-columns:repeat(4,1fr);gap:20px}
+  .step{padding:62px 0 0;transform:translateY(14px)}
+  .step .num{left:0;top:0}
+  .step::after{left:50px;right:-20px;top:22px;bottom:auto;width:auto;height:3px}
+  .step:last-child::after{display:none}
+  .mbar{display:none}
+  .chat-fab{bottom:20px}.chat{bottom:86px}
+  footer{padding-bottom:48px}
+  .tool .tip{width:230px}
+}
+@media (max-width:959px){.hero-ctas-m .btn{flex:1 1 100%}}
+@media (min-width:960px){.mbar-pad{display:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .marquee-track{animation:none}
+}
+/* Scroll reveal (only when JS is available) */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="progress" role="presentation"></div>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20l1.4-4A8 8 0 1112 20a8 8 0 01-3.6-.9z"/></symbol>
+<symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 21l5-3 5 3-1.5-7"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0112 0M16.5 5a3 3 0 010 6M21 20a5.5 5.5 0 00-4-5.3"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></symbol>
+<symbol id="i-laptop" viewBox="0 0 24 24"><path d="M5 6h14v9H5zM2.5 19h19"/></symbol>
+<symbol id="i-build" viewBox="0 0 24 24"><path d="M5 21V4h9v17M14 9h5v12M8 8h3M8 12h3M8 16h3"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 20a2 2 0 002 1h13"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></symbol>
+<symbol id="i-brief" viewBox="0 0 24 24"><path d="M4 8h16v11H4zM9 8V5h6v3"/></symbol>
+<symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+</svg>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo-pair" href="#hero" aria-label="[UNIVERSITY NAME] with Accredian">
+      <div class="ph" role="img" aria-label="[UNIVERSITY LOGO]">[UNIVERSITY LOGO]</div>
+      <span class="x" aria-hidden="true">x</span>
+      <div class="ph" role="img" aria-label="[ACCREDIAN LOGO]">[ACCREDIAN LOGO]</div>
+    </a>
+    <nav class="main" aria-label="Primary">
+      <a href="#audience">Who it is for</a><a href="#curriculum">Curriculum</a><a href="#faculty">Faculty</a><a href="#fees">Fees</a><a href="#faqs">FAQs</a>
+    </nav>
+    <button class="btn" data-cta="header_apply" data-resource="apply">Apply Now</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ SECTION 0: HERO ============ -->
+<section id="hero" class="dark">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-badges">
+        <div class="ph" role="img" aria-label="[UNIVERSITY LOGO]">[UNIVERSITY LOGO]</div>
+        <div class="ph" role="img" aria-label="[ACCREDITATION BADGE]">[ACCREDITATION BADGE]</div>
+        <div class="ph" role="img" aria-label="[ACCREDIAN LOGO]">[ACCREDIAN LOGO]</div>
+      </div>
+      <span class="eyebrow">[UNIVERSITY NAME] | Executive Education | For [TARGET ROLE]</span>
+      <h1>[PROGRAM NAME]</h1>
+      <ul class="pointers">
+        <li><svg class="i"><use href="#i-target"/></svg><span>Built for leaders with [X+ YEARS] of experience who are accountable for enterprise outcomes, not just functional delivery.</span></li>
+        <li><svg class="i"><use href="#i-spark"/></svg><span>Apply AI, analytics and strategy to the real decisions on your desk, through live faculty sessions and an industry capstone.</span></li>
+        <li><svg class="i"><use href="#i-award"/></svg><span>Graduate with [CERTIFICATE NAME] and Executive Alumni Status from [UNIVERSITY NAME].</span></li>
+      </ul>
+
+      <div class="info-strip" aria-label="Program information">
+        <div><small>Duration</small><b>[X MONTHS]</b></div>
+        <div><small>Format</small><b>[LIVE ONLINE / HYBRID]</b></div>
+        <div><small>Certificate</small><b>[CERTIFICATE NAME]</b></div>
+        <div><small>Campus Immersion</small><b>[NUMBER OF DAYS], [LOCATION]</b></div>
+      </div>
+
+      <div class="stat-row" aria-label="University trust signals">
+        <div class="stat"><b class="cnt">[NIRF RANK]</b><small>NIRF Ranking</small></div>
+        <div class="stat"><b class="cnt">[GLOBAL RANK]</b><small>Global Ranking</small></div>
+        <div class="stat"><b>[ACCREDITATIONS]</b><small>Accreditation</small></div>
+      </div>
+      <div class="trust-mini" aria-label="Community and ratings">
+        <span><span class="stars" aria-hidden="true"><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg></span> <b class="cnt">[X.X/5]</b> Google rating (<b class="cnt">[N]</b> reviews)</span>
+        <span><b class="cnt">[N]</b> alumni</span>
+        <span><b class="cnt">[N]</b> learners</span>
+      </div>
+
+      <div class="cta-row hero-ctas-m">
+        <button class="btn" data-cta="hero_apply" data-resource="apply">Apply Now</button>
+        <button class="btn" data-cta="hero_brochure" data-resource="brochure">Download Brochure</button>
+      </div>
+
+      <div class="hero-media">
+        <div class="ph" role="img" aria-label="[REAL LEARNER IMAGE]">[REAL LEARNER IMAGE: cohort at campus]</div>
+        <button class="play" data-video="[INTRO_VIDEO_EMBED_URL]" aria-label="Play program introduction video"><svg class="i fill"><use href="#i-play"/></svg></button>
+      </div>
+    </div>
+
+    <aside class="hero-form" aria-label="Quick enquiry">
+      <div class="form-box">
+        <h3>Speak to an admissions counsellor</h3>
+        <p class="sub">Two quick steps. We reply within [RESPONSE TIME].</p>
+        <div id="heroForm"></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ SECTION 1: TARGET AUDIENCE ============ -->
+<section id="audience">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Who this program is for</span>
+      <h2>Designed for [TARGET ROLE] leaders ready to own enterprise-level decisions</h2>
+      <p class="lead">Pick your role to see exactly what changes for you.</p>
+    </div>
+
+    <div class="rv">
+      <div class="tabs" role="tablist" aria-label="Choose your role">
+        <button class="tab" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true">CHRO / Head of HR</button>
+        <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false" tabindex="-1">VP / AVP HR</button>
+        <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">HR Business Partner Lead</button>
+        <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Talent / L&amp;D Head</button>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+        <h3>Move from running HR to shaping the business</h3>
+        <ul class="ticks"><li><svg class="i"><use href="#i-check"/></svg>Present workforce, cost and capability trade-offs to the board with the same rigour as finance and strategy.</li><li><svg class="i"><use href="#i-check"/></svg>Lead enterprise transformation programs with a clear business case and measurable return.</li><li><svg class="i"><use href="#i-check"/></svg>Use AI and people analytics to predict attrition, skill gaps and productivity before they hit the P&amp;L.</li></ul>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" hidden>
+        <h3>Prepare for the step to function head</h3>
+        <ul class="ticks"><li><svg class="i"><use href="#i-check"/></svg>Build the strategic fluency expected in succession conversations at CHRO level.</li><li><svg class="i"><use href="#i-check"/></svg>Design organisation structures and workforce plans that scale with growth.</li><li><svg class="i"><use href="#i-check"/></svg>Gain a peer network of senior HR leaders across industries.</li></ul>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+        <h3>Become the business leader's first call</h3>
+        <ul class="ticks"><li><svg class="i"><use href="#i-check"/></svg>Translate business strategy into talent decisions that business heads trust.</li><li><svg class="i"><use href="#i-check"/></svg>Quantify the impact of people programs in language the CFO accepts.</li><li><svg class="i"><use href="#i-check"/></svg>Handle change, restructuring and leadership transitions with a proven playbook.</li></ul>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+        <h3>Tie capability building to business results</h3>
+        <ul class="ticks"><li><svg class="i"><use href="#i-check"/></svg>Build a future-skills roadmap linked to the company's growth plan.</li><li><svg class="i"><use href="#i-check"/></svg>Evaluate and deploy AI-enabled learning and talent tools.</li><li><svg class="i"><use href="#i-check"/></svg>Show leadership clear metrics on capability and readiness.</li></ul>
+      </div>
+      <p class="badge-s" style="margin-top:10px">Draft role copy: confirm with the academic team for [PROGRAM NAME]</p>
+    </div>
+
+    <div class="grid g2 after-cta rv">
+      <div class="card">
+        <div class="facts">
+          <div class="fact"><small>Experience required</small><b>[X+ YEARS]</b></div>
+          <div class="fact"><small>Typical learner profile</small><b>Average [X] years | [SENIORITY MIX]</b></div>
+          <div class="fact" style="grid-column:1/-1"><small>Target industries</small><b>[INDUSTRY A] | [INDUSTRY B] | [INDUSTRY C] | [INDUSTRY D]</b></div>
+        </div>
+      </div>
+      <div class="card">
+        <small class="fact" style="display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Where our learners work</small>
+        <div class="logos" data-logos="8" data-label="COMPANY LOGO"></div>
+      </div>
+    </div>
+
+    <div class="grid g2 after-cta rv">
+      <div class="card">
+        <h3>Who should apply</h3>
+        <ul class="ticks">
+          <li><svg class="i"><use href="#i-check"/></svg>Leaders with [X+ YEARS] of experience and team or P&amp;L accountability</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Professionals preparing for a [TARGET ROLE] or equivalent step</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Those who can commit [HOURS] a week for [X MONTHS]</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Who should not apply</h3>
+        <ul class="ticks no">
+          <li><svg class="i"><use href="#i-x"/></svg>Early-career professionals looking for an entry-level credential</li>
+          <li><svg class="i"><use href="#i-x"/></svg>Anyone seeking a self-paced, no-interaction course</li>
+          <li><svg class="i"><use href="#i-x"/></svg>Those unable to attend live sessions or the campus immersion</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta-strip rv">
+      <p>Join a cohort where senior leaders from India's top companies learn, collaborate, and build lifelong executive networks.</p>
+      <button class="btn" data-cta="audience_strip_apply" data-resource="apply">Apply Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: WHY UPGRADE NOW ============ -->
+<section id="why-now" class="dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Why upgrade now</span>
+      <h2>The expectations of a [TARGET ROLE] have changed. The window to adapt is narrowing.</h2>
+      <p class="lead">AI is moving from pilot projects to core operating models. Boards now expect senior leaders to make data-backed decisions and to lead the people side of that shift.</p>
+    </div>
+
+    <div class="grid g3 rv">
+      <div class="card bigstat"><b class="cnt">[STAT A]</b><p>[Verified statistic on AI adoption in enterprises]</p><small class="badge-s">Source: [SOURCE, YEAR]</small></div>
+      <div class="card bigstat"><b class="cnt">[STAT B]</b><p>[Verified statistic on the leadership skill gap]</p><small class="badge-s">Source: [SOURCE, YEAR]</small></div>
+      <div class="card bigstat"><b class="cnt">[STAT C]</b><p>[Verified statistic on growth of AI-related roles]</p><small class="badge-s">Source: [SOURCE, YEAR]</small></div>
+    </div>
+
+    <div class="grid g2 after-cta rv">
+      <div class="card">
+        <h3>What is shifting in the market</h3>
+        <ul class="ticks">
+          <li><svg class="i"><use href="#i-check"/></svg><span><b>AI and business transformation:</b> every function is being redesigned around automation and decision intelligence.</span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span><b>Future leadership requirements:</b> boardroom fluency, data literacy and change leadership are now baseline.</span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span><b>The skill gap:</b> [VERIFIED INSIGHT on the gap between current and required leadership skills].</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The cost of waiting</h3>
+        <ul class="ticks no">
+          <li><svg class="i"><use href="#i-x"/></svg>Being sidelined from enterprise decisions as peers gain analytical credibility</li>
+          <li><svg class="i"><use href="#i-x"/></svg>Succession lists that favour leaders who can show transformation results</li>
+          <li><svg class="i"><use href="#i-x"/></svg>Skills that age faster than the next promotion cycle</li>
+        </ul>
+        <p style="margin-top:14px"><b>Industries demanding AI-ready leaders:</b></p>
+        <div class="chips"><span class="chip">Banking and financial services</span><span class="chip">IT and technology services</span><span class="chip">Healthcare and life sciences</span><span class="chip">Retail and e-commerce</span><span class="chip">Manufacturing</span><span class="chip">Telecom</span></div>
+      </div>
+    </div>
+
+    <h3 class="after-cta rv">In the news</h3>
+    <div class="news rv" aria-label="News headlines about AI and leadership">
+      <div class="card"><div class="ph" style="aspect-ratio:16/9;margin-bottom:10px">[NEWS CLIP IMAGE]</div><p><b>[HEADLINE A: AI roles and leadership demand]</b></p><small>[PUBLICATION] | [DATE] | [LINK]</small></div>
+      <div class="card"><div class="ph" style="aspect-ratio:16/9;margin-bottom:10px">[NEWS CLIP IMAGE]</div><p><b>[HEADLINE B: Fastest growing roles]</b></p><small>[PUBLICATION] | [DATE] | [LINK]</small></div>
+      <div class="card"><div class="ph" style="aspect-ratio:16/9;margin-bottom:10px">[NEWS CLIP IMAGE]</div><p><b>[HEADLINE C: The future of AI at work]</b></p><small>[PUBLICATION] | [DATE] | [LINK]</small></div>
+      <div class="card"><div class="ph" style="aspect-ratio:16/9;margin-bottom:10px">[NEWS CLIP IMAGE]</div><p><b>[HEADLINE D: Enterprise AI adoption]</b></p><small>[PUBLICATION] | [DATE] | [LINK]</small></div>
+    </div>
+    <div class="cta-row rv"><button class="btn" data-cta="whynow_curriculum" data-resource="curriculum">Get the Curriculum</button></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: CAPABILITY TRANSFORMATION ============ -->
+<section id="transformation">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Capability transformation</span>
+      <h2>What changes in how you lead, decide and are perceived</h2>
+      <p class="lead">Switch the view, or tap any card to flip it.</p>
+    </div>
+    <div class="switch rv" role="group" aria-label="Before or after the program">
+      <button id="swBefore" aria-pressed="true">Before</button>
+      <button id="swAfter" aria-pressed="false">After</button>
+    </div>
+    <div class="grid g2 rv" id="flipGrid">
+      <button class="card flip" aria-pressed="false"><div class="side before"><small>Before</small><h3>Strategic decision-making</h3><p>You bring functional input to decisions that others have already framed.</p></div><div class="side after"><small>After</small><h3>Strategic decision-making</h3><p>You frame the decision, model the trade-offs and defend the recommendation in the boardroom.</p></div></button>
+      <button class="card flip" aria-pressed="false"><div class="side before"><small>Before</small><h3>Enterprise transformation</h3><p>You support change initiatives that sit with other leaders.</p></div><div class="side after"><small>After</small><h3>Enterprise transformation</h3><p>You lead the transformation roadmap, from business case and sequencing to adoption and measurement.</p></div></button>
+      <button class="card flip" aria-pressed="false"><div class="side before"><small>Before</small><h3>Business impact</h3><p>Your results are reported as activity: programs run, positions filled.</p></div><div class="side after"><small>After</small><h3>Business impact</h3><p>Your results are reported as outcomes: revenue per employee, cost of attrition, productivity gains.</p></div></button>
+      <button class="card flip" aria-pressed="false"><div class="side before"><small>Before</small><h3>Executive credibility</h3><p>Peers see you as a trusted functional expert.</p></div><div class="side after"><small>After</small><h3>Executive credibility</h3><p>Peers see you as a business leader who happens to own people strategy, backed by [UNIVERSITY NAME] credentials.</p></div></button>
+      <button class="card flip" aria-pressed="false"><div class="side before"><small>Before</small><h3>Data and AI fluency</h3><p>You depend on reports others prepare and tools others select.</p></div><div class="side after"><small>After</small><h3>Data and AI fluency</h3><p>You question the model, choose the right AI use cases and set governance for them.</p></div></button>
+      <button class="card flip" aria-pressed="false"><div class="side before"><small>Before</small><h3>Career opportunities</h3><p>Next step options are limited to similar roles in similar companies.</p></div><div class="side after"><small>After</small><h3>Career opportunities</h3><p>You are considered for enterprise leadership roles and cross-industry moves, with an alumni network to open doors.</p></div></button>
+    </div>
+    <div class="cta-row rv"><button class="btn" data-cta="transform_journey" data-resource="curriculum">See the Learning Journey</button></div>
+    <div class="trust-mini rv"><span>NIRF <b class="cnt">[NIRF RANK]</b></span><span>[ACCREDITATIONS]</span><span><b class="cnt">[N]</b> alumni</span></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4: READINESS CHECK ============ -->
+<section id="readiness" class="soft">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Readiness check</span>
+      <h2>Are You Ready for the Next Executive Leadership Role?</h2>
+      <p class="lead">Can you confidently answer "Yes" to these questions?</p>
+    </div>
+    <form class="quiz rv" id="quiz" novalidate>
+      <fieldset style="border:0;padding:0;margin:0">
+        <legend class="sr">Executive readiness checklist</legend>
+        <label class="q-item"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span class="txt">I can influence board-level strategic decisions.</span></label>
+        <label class="q-item"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span class="txt">I know how to lead enterprise-wide transformation.</span></label>
+        <label class="q-item"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span class="txt">I can align people strategy with business strategy.</span></label>
+        <label class="q-item"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span class="txt">I can build a future-ready workforce strategy.</span></label>
+        <label class="q-item"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span class="txt">I understand how AI and analytics impact executive decision-making.</span></label>
+        <label class="q-item"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span><span class="txt">I can design an organization that scales with business growth.</span></label>
+      </fieldset>
+      <div class="cta-row" style="justify-content:center"><button type="submit" class="btn">See My Result</button></div>
+      <div class="result" id="quizResult" aria-live="polite" tabindex="-1">
+        <div class="score-n"><span id="scoreN">0</span><span style="font-size:20px"> / 6</span></div>
+        <div class="meter" id="meter"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h3 id="resTitle"></h3>
+        <p id="resText" style="color:#C9D6EA"></p>
+        <div class="cta-row">
+          <button type="button" class="btn" data-cta="readiness_program" data-resource="curriculum">See how this program strengthens the capabilities required for today's [TARGET ROLE]</button>
+          <button type="button" class="btn" data-cta="readiness_report" data-resource="readiness">Email me my readiness report</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ SECTION 5: WHY CHOOSE ============ -->
+<section id="highlights">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Why choose this program</span>
+      <h2>Built around outcomes you can show your board</h2>
+      <p class="lead">Hover or tap a card to see why it matters.</p>
+    </div>
+    <div class="grid g3 rv">
+      <div class="card hl" tabindex="0"><div class="ic"><svg class="i"><use href="#i-award"/></svg></div><h3>Executive Alumni Status</h3><p>Lifelong access to the [UNIVERSITY NAME] network.</p><div class="more">Why it matters: peer network, public recognition, and [CAMPUS ACCESS DETAILS].</div></div>
+      <div class="card hl" tabindex="0"><div class="ic"><svg class="i"><use href="#i-build"/></svg></div><h3>Campus Immersion</h3><p>[NUMBER OF DAYS] on campus at [LOCATION].</p><div class="more">Learn in person with faculty and your cohort, and build relationships that last beyond the program.</div></div>
+      <div class="card hl" tabindex="0"><div class="ic"><svg class="i"><use href="#i-laptop"/></svg></div><h3>Live Faculty Sessions</h3><p>Interactive classes, not recorded lectures.</p><div class="more">Ask questions in real time and work through your own scenarios with faculty from [UNIVERSITY NAME] and industry.</div></div>
+      <div class="card hl" tabindex="0"><div class="ic"><svg class="i"><use href="#i-brief"/></svg></div><h3>Industry Projects and Capstone</h3><p>Solve a live business problem.</p><div class="more">Your capstone is built around a real challenge and presented for feedback from faculty and practitioners.</div></div>
+      <div class="card hl" tabindex="0"><div class="ic"><svg class="i"><use href="#i-cal"/></svg></div><h3>Weekend Learning</h3><p>Designed around a full-time role.</p><div class="more">Sessions run on [WEEKEND SCHEDULE] so your day job is not disrupted.</div></div>
+      <div class="card hl" tabindex="0"><div class="ic"><svg class="i"><use href="#i-spark"/></svg></div><h3>AI-enabled Learning</h3><p>Use AI tools as part of the coursework.</p><div class="more">Practice with the tools your teams will adopt, and learn where they help and where they mislead.</div></div>
+      <div class="card hl" tabindex="0"><div class="ic"><svg class="i"><use href="#i-users"/></svg></div><h3>Executive Peer Network</h3><p>Learn alongside senior leaders.</p><div class="more">Cohort members come from [INDUSTRIES] and bring decisions you will face next.</div></div>
+      <div class="card hl" tabindex="0"><div class="ic"><svg class="i"><use href="#i-book"/></svg></div><h3>Certification</h3><p>[CERTIFICATE NAME] from [UNIVERSITY NAME].</p><div class="more">A credential recognised by employers and shareable on LinkedIn.</div></div>
+      <div class="card hl" tabindex="0"><div class="ic"><svg class="i"><use href="#i-target"/></svg></div><h3>Practical Learning</h3><p>Cases, simulations and assignments.</p><div class="more">Every module ends with something you can apply at work the following Monday.</div></div>
+    </div>
+
+    <h3 class="after-cta rv">This program vs typical online programs</h3>
+    <div class="tbl-wrap rv">
+      <table>
+        <caption class="sr">Comparison of this program with typical online programs</caption>
+        <thead><tr><th scope="col">Feature</th><th scope="col" class="c">This program</th><th scope="col" class="c">Typical online programs</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Live faculty interaction</th><td class="c yes"><svg class="i"><use href="#i-check"/></svg><span class="sr">Yes</span></td><td class="c no"><svg class="i"><use href="#i-x"/></svg><span class="sr">No</span></td></tr>
+          <tr><th scope="row">On-campus immersion</th><td class="c yes"><svg class="i"><use href="#i-check"/></svg><span class="sr">Yes</span></td><td class="c no"><svg class="i"><use href="#i-x"/></svg><span class="sr">No</span></td></tr>
+          <tr><th scope="row">Executive Alumni Status</th><td class="c yes"><svg class="i"><use href="#i-check"/></svg><span class="sr">Yes</span></td><td class="c no"><svg class="i"><use href="#i-x"/></svg><span class="sr">No</span></td></tr>
+          <tr><th scope="row">Industry capstone project</th><td class="c yes"><svg class="i"><use href="#i-check"/></svg><span class="sr">Yes</span></td><td class="c no"><svg class="i"><use href="#i-x"/></svg><span class="sr">No</span></td></tr>
+          <tr><th scope="row">Peer cohort of senior leaders</th><td class="c yes"><svg class="i"><use href="#i-check"/></svg><span class="sr">Yes</span></td><td class="c no"><svg class="i"><use href="#i-x"/></svg><span class="sr">No</span></td></tr>
+          <tr><th scope="row">AI tools practised in coursework</th><td class="c yes"><svg class="i"><use href="#i-check"/></svg><span class="sr">Yes</span></td><td class="c no"><svg class="i"><use href="#i-x"/></svg><span class="sr">No</span></td></tr>
+          <tr><th scope="row">Weekend schedule for working leaders</th><td class="c yes"><svg class="i"><use href="#i-check"/></svg><span class="sr">Yes</span></td><td class="c no"><svg class="i"><use href="#i-x"/></svg><span class="sr">No</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="f-note rv">Comparison reflects the general market. Confirm each row against the final program design before launch.</p>
+    <div class="trust-mini rv"><span>NIRF <b class="cnt">[NIRF RANK]</b></span><span>Global <b class="cnt">[GLOBAL RANK]</b></span><span>[ACCREDITATIONS]</span></div>
+    <div class="cta-row rv"><button class="btn" data-cta="highlights_callback" data-resource="callback">Request a Callback</button></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6: CREDIBILITY ============ -->
+<section id="credibility" class="soft">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Institution and learning partner</span>
+      <h2>An institution with a track record, delivered by a partner built for working professionals</h2>
+    </div>
+    <div class="kpis rv">
+      <div class="card kpi"><b class="cnt">[NIRF RANK]</b><small>NIRF Ranking</small></div>
+      <div class="card kpi"><b class="cnt">[GLOBAL RANK]</b><small>Global Ranking</small></div>
+      <div class="card kpi"><b>[ACCREDITATIONS]</b><small>Accreditation</small></div>
+      <div class="card kpi"><b class="cnt">[YEARS]</b><small>Years of legacy</small></div>
+    </div>
+    <div class="grid g2 after-cta rv">
+      <div class="card"><h3>Institutional achievements</h3><ul class="ticks"><li><svg class="i"><use href="#i-check"/></svg>[VERIFIED ACHIEVEMENT A]</li><li><svg class="i"><use href="#i-check"/></svg>[VERIFIED ACHIEVEMENT B]</li><li><svg class="i"><use href="#i-check"/></svg>[VERIFIED ACHIEVEMENT C]</li></ul></div>
+      <div class="card"><h3>Industry collaborations</h3><div class="logos" data-logos="6" data-label="PARTNER LOGO"></div></div>
+    </div>
+    <h3 class="after-cta rv">As featured in</h3>
+    <div class="featured rv"><div class="ph">[PUBLICATION LOGO]</div><div class="ph">[PUBLICATION LOGO]</div><div class="ph">[PUBLICATION LOGO]</div><div class="ph">[PUBLICATION LOGO]</div></div>
+
+    <div class="card after-cta rv" style="padding:26px">
+      <span class="eyebrow">Why Accredian</span>
+      <h3>Your learning partner for the full journey</h3>
+      <p class="lead" style="margin-bottom:18px">Accredian partners with leading institutions to deliver executive programs with structured learner support from application to alumni.</p>
+      <div class="grid g3">
+        <div><b>Learner support</b><p style="color:var(--muted);font-size:15px">[DESCRIBE SUPPORT MODEL: mentor, program manager, response times]</p></div>
+        <div><b>Success metrics</b><p style="color:var(--muted);font-size:15px"><b class="cnt">[N]</b> learners | <b class="cnt">[X%]</b> completion | <b class="cnt">[X.X/5]</b> satisfaction</p></div>
+        <div><b>Partner institutes</b><p style="color:var(--muted);font-size:15px">Programs delivered with [NUMBER] leading institutions.</p></div>
+      </div>
+      <div class="marquee" style="margin-top:18px" aria-label="Partner institute logos"><div class="marquee-track" data-marquee="10" data-label="PARTNER INSTITUTE LOGO"></div></div>
+    </div>
+    <div class="cta-row rv"><button class="btn" data-cta="credibility_brochure" data-resource="brochure">Download Brochure</button></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 7: FACULTY ============ -->
+<section id="faculty">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Faculty</span>
+      <h2>Learn from academics and practitioners who run what they teach</h2>
+      <p class="lead">Select "View profile" to see full details and corporate associations.</p>
+    </div>
+    <div class="grid g4 rv" id="facGrid"></div>
+    <div class="trust-mini rv"><span>NIRF <b class="cnt">[NIRF RANK]</b></span><span>[ACCREDITATIONS]</span><span>Google <b class="cnt">[X.X/5]</b></span></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 8: CURRICULUM ============ -->
+<section id="curriculum" class="soft">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Curriculum</span>
+      <h2>A learning journey that ends with a board-ready capability</h2>
+      <p class="lead">Each module is defined by what you will be able to do, not by what you will have read.</p>
+    </div>
+    <div class="rail rv" id="rail" role="navigation" aria-label="Learning journey timeline"></div>
+    <div class="rv" id="mods"></div>
+    <p class="badge-s">Draft module copy: confirm with the academic team</p>
+    <div class="cta-row rv"><button class="btn" data-cta="curriculum_detailed" data-resource="curriculum">Get the Detailed Curriculum</button></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 9: CAPSTONE + AI TOOLS ============ -->
+<section id="capstone" class="dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Capstone projects and AI tools</span>
+      <h2>Prove it on a real problem, with the tools you will use at work</h2>
+    </div>
+    <div class="chips rv" role="group" aria-label="Filter projects" id="projFilter">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="strategy">Strategy</button>
+      <button class="chip" aria-pressed="false" data-f="analytics">Analytics</button>
+      <button class="chip" aria-pressed="false" data-f="ai">AI</button>
+      <button class="chip" aria-pressed="false" data-f="org">Organisation design</button>
+    </div>
+    <div class="grid g3 rv" style="margin-top:16px" id="projGrid">
+      <div class="card proj" data-c="strategy"><span class="badge-s">Capstone | Sample: replace with verified data</span><h3>[CAPSTONE PROJECT TITLE A]</h3><p>[One-line brief and business outcome]</p></div>
+      <div class="card proj" data-c="analytics"><span class="badge-s">Case study | Sample: replace with verified data</span><h3>[CASE STUDY TITLE B]</h3><p>[One-line brief and business outcome]</p></div>
+      <div class="card proj" data-c="ai"><span class="badge-s">Simulation | Sample: replace with verified data</span><h3>[SIMULATION TITLE C]</h3><p>[One-line brief and business outcome]</p></div>
+      <div class="card proj" data-c="org"><span class="badge-s">Assignment | Sample: replace with verified data</span><h3>[ASSIGNMENT TITLE D]</h3><p>[One-line brief and business outcome]</p></div>
+      <div class="card proj" data-c="ai"><span class="badge-s">Capstone | Sample: replace with verified data</span><h3>[CAPSTONE PROJECT TITLE E]</h3><p>[One-line brief and business outcome]</p></div>
+      <div class="card proj" data-c="strategy"><span class="badge-s">Case study | Sample: replace with verified data</span><h3>[CASE STUDY TITLE F]</h3><p>[One-line brief and business outcome]</p></div>
+    </div>
+    <h3 class="after-cta rv">AI Tools Tracker</h3>
+    <p class="lead rv" style="margin-bottom:22px">Hover or focus a tool to see what it is used for.</p>
+    <div class="grid rv" id="toolGrid" style="grid-template-columns:repeat(2,1fr);gap:14px 12px"></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 10: CERTIFICATE ============ -->
+<section id="certificate">
+  <div class="wrap grid g2" style="align-items:center;gap:36px">
+    <div class="rv">
+      <button class="cert" data-lightbox="[CERTIFICATE IMAGE: full size]" aria-label="Zoom into certificate preview"><div class="ph">[CERTIFICATE PREVIEW IMAGE]</div><span class="zoom"><svg class="i" style="width:16px;height:16px"><use href="#i-zoom"/></svg>Zoom</span></button>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Certificate and executive benefits</span>
+      <h2>A credential that keeps working long after the last class</h2>
+      <ul class="ticks">
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>[CERTIFICATE NAME]</b> from [UNIVERSITY NAME], shareable on LinkedIn.</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Executive Alumni Status:</b> [BENEFITS: events, library, directory].</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Campus benefits:</b> [CAMPUS ACCESS DETAILS].</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Networking:</b> a cohort and alumni community of <b class="cnt">[N]</b> senior professionals.</span></li>
+      </ul>
+      <div class="trust-mini"><span>[ACCREDITATIONS]</span><span>NIRF <b class="cnt">[NIRF RANK]</b></span></div>
+      <div class="cta-row"><button class="btn" data-cta="certificate_apply" data-resource="apply">Apply Now</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 11: CAMPUS GALLERY ============ -->
+<section id="campus" class="soft">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Campus immersion</span>
+      <h2>Picture yourself on campus</h2>
+    </div>
+    <div class="chips rv" id="galFilter" role="group" aria-label="Filter photos">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="campus">Campus</button>
+      <button class="chip" aria-pressed="false" data-f="classroom">Classroom</button>
+      <button class="chip" aria-pressed="false" data-f="networking">Networking</button>
+      <button class="chip" aria-pressed="false" data-f="convocation">Convocation</button>
+      <button class="chip" aria-pressed="false" data-f="faculty">Faculty</button>
+    </div>
+    <div class="masonry rv" id="gallery" style="margin-top:16px"></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 12: TESTIMONIALS ============ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Learner voices</span>
+      <h2>What senior leaders say after completing the program</h2>
+      <div class="trust-mini"><span class="stars" aria-hidden="true"><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg></span><span><b class="cnt">[X.X/5]</b> on Google from <b class="cnt">[N]</b> reviews</span><span><b class="cnt">[N]</b> learners</span></div>
+    </div>
+    <div class="carousel-ctl rv"><button id="carPrev" aria-label="Previous testimonials"><svg class="i"><use href="#i-left"/></svg></button><button id="carNext" aria-label="Next testimonials"><svg class="i"><use href="#i-right"/></svg></button></div>
+    <div class="carousel rv" id="carousel" tabindex="0" aria-label="Testimonials carousel, swipe or use arrow keys">
+      <div class="card"><button class="vthumb" data-video="[TESTIMONIAL_VIDEO_URL]" aria-label="Play video testimonial"><div class="ph">[VIDEO THUMBNAIL]</div><span class="play"><svg class="i fill"><use href="#i-play"/></svg></span></button><p class="quote">"[VIDEO TESTIMONIAL PULL QUOTE]"</p><div class="who">[LEARNER NAME], [DESIGNATION], [COMPANY]</div><span class="badge-s">Sample: replace with verified data</span></div>
+      <div class="card"><div class="stars" aria-label="[X] out of 5 stars"><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg></div><p class="quote">"[WRITTEN TESTIMONIAL: a specific outcome the learner achieved]"</p><div class="who">[LEARNER NAME], [DESIGNATION], [COMPANY]<br>Moved from [COMPANY A] to [COMPANY B]</div><span class="badge-s">Sample: replace with verified data</span></div>
+      <div class="card"><div class="ph" style="min-height:60px">[GOOGLE REVIEW SCREENSHOT]</div><p class="quote">"[GOOGLE REVIEW TEXT]"</p><div class="who">[REVIEWER NAME] | Google review</div><span class="badge-s">Sample: replace with verified data</span></div>
+      <div class="card"><button class="vthumb" data-video="[TESTIMONIAL_VIDEO_URL]" aria-label="Play video testimonial"><div class="ph">[VIDEO THUMBNAIL]</div><span class="play"><svg class="i fill"><use href="#i-play"/></svg></span></button><p class="quote">"[VIDEO TESTIMONIAL PULL QUOTE]"</p><div class="who">[LEARNER NAME], [DESIGNATION], [COMPANY]</div><span class="badge-s">Sample: replace with verified data</span></div>
+      <div class="card"><div class="stars" aria-label="[X] out of 5 stars"><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg><svg class="i fill"><use href="#i-star"/></svg></div><p class="quote">"[LEARNER STORY: before, program, after]"</p><div class="who">[LEARNER NAME], [DESIGNATION], [COMPANY]</div><span class="badge-s">Sample: replace with verified data</span></div>
+    </div>
+    <p class="who rv" style="margin:8px 0 10px">Where our learners work or moved to</p>
+    <div class="marquee rv" aria-label="Employer logos"><div class="marquee-track" data-marquee="10" data-label="COMPANY LOGO"></div></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 13: TRANSITIONS ============ -->
+<section id="transitions" class="soft">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Learner transitions</span>
+      <h2>Where learners started and where they moved</h2>
+      <p class="lead">Hover or scroll to see each move.</p>
+    </div>
+    <div class="grid g3 rv" id="trGrid"></div>
+    <p class="f-note rv">All cards above are layout samples. Replace with verified learner data and consent before publishing.</p>
+    <div class="cta-row rv"><button class="btn" data-cta="transitions_outcomes" data-resource="outcomes">Download Career Outcomes Report</button></div>
+    <p class="f-note">Show this button only if a verified report exists.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 14: FEES ============ -->
+<section id="fees">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Fees and financing</span>
+      <h2>An investment in your next ten years of leadership</h2>
+    </div>
+    <h3 class="rv" style="font-size:18px">Why this investment makes sense</h3>
+    <div class="why-inv rv">
+      <div><svg class="i"><use href="#i-check"/></svg>Executive Certificate</div>
+      <div><svg class="i"><use href="#i-check"/></svg>Executive Alumni Status</div>
+      <div><svg class="i"><use href="#i-check"/></svg>Campus Immersion</div>
+      <div><svg class="i"><use href="#i-check"/></svg>Live Faculty Sessions</div>
+      <div><svg class="i"><use href="#i-check"/></svg>Industry Projects</div>
+      <div><svg class="i"><use href="#i-check"/></svg>Executive Peer Network</div>
+    </div>
+    <div class="grid g2">
+      <div class="card rv">
+        <small class="fact" style="display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Total program fee</small>
+        <div class="fee-total">[INR AMOUNT]</div>
+        <p style="color:var(--muted)">GST: [GST DETAILS]</p>
+        <ul class="ticks">
+          <li><svg class="i"><use href="#i-check"/></svg><span><b>EMI</b> from [INR X/MONTH]</span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span><b>Scholarships:</b> [SCHOLARSHIP DETAILS]</span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span><b>Corporate sponsorship:</b> [SPONSORSHIP DETAILS]</span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span><b>Referral voucher:</b> [REFERRAL VOUCHER DETAILS]</span></li>
+        </ul>
+        <details class="exp">
+          <summary>How corporate sponsorship works <svg class="i" style="margin-left:auto"><use href="#i-chev"/></svg></summary>
+          <div class="in-b">
+            <ol style="padding-left:20px;margin:0 0 10px"><li>Share the program details with your manager or L&amp;D team.</li><li>Submit the sponsorship letter with the approved amount.</li><li>[INVOICE AND PAYMENT PROCESS]</li></ol>
+            <button class="dl-link" id="dlLetter" type="button">Download sponsorship letter template</button>
+          </div>
+        </details>
+      </div>
+      <div class="card emi rv" id="emi">
+        <h3>EMI calculator</h3>
+        <p style="color:var(--muted);font-size:15px">Select a tenure to see your monthly amount.</p>
+        <div class="chips" role="group" aria-label="EMI tenure in months" id="emiTenure">
+          <button class="chip" aria-pressed="false" data-m="6">6 months</button>
+          <button class="chip" aria-pressed="true" data-m="12">12 months</button>
+          <button class="chip" aria-pressed="false" data-m="18">18 months</button>
+          <button class="chip" aria-pressed="false" data-m="24">24 months</button>
+        </div>
+        <div class="emi-out" aria-live="polite"><small>Estimated monthly amount</small><br><b id="emiVal">[INR X/MONTH]</b><div class="f-note" id="emiNote">Final EMI depends on the lending partner and tenure. [EMI TERMS]</div></div>
+        <div class="trust-mini"><span>[ACCREDITATIONS]</span><span>Google <b class="cnt">[X.X/5]</b></span></div>
+      </div>
+    </div>
+    <div class="cta-row rv">
+      <button class="btn" data-cta="fees_scholarship" data-resource="scholarship">Check Scholarship Eligibility</button>
+      <button class="btn" data-cta="fees_apply" data-resource="apply">Apply Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 15: ELIGIBILITY ============ -->
+<section id="eligibility" class="soft">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Eligibility</span>
+      <h2>Am I Eligible?</h2>
+      <p class="lead">Admission criteria: [X+ YEARS] of experience | [EDUCATIONAL QUALIFICATION] | Suitable roles: [TARGET ROLE] and adjacent leadership roles.</p>
+    </div>
+    <div class="card elig rv">
+      <form id="eligForm" novalidate>
+        <div class="grid g3">
+          <div class="fld"><label for="e1">Years of work experience</label><select id="e1" required><option value="">Select</option><option value="0">Less than 5 years</option><option value="1">5 to 9 years</option><option value="2">10 to 14 years</option><option value="3">15+ years</option></select></div>
+          <div class="fld"><label for="e2">Highest qualification</label><select id="e2" required><option value="">Select</option><option value="0">Below graduation</option><option value="1">Graduate</option><option value="2">Postgraduate or higher</option></select></div>
+          <div class="fld"><label for="e3">Current level</label><select id="e3" required><option value="">Select</option><option value="0">Individual contributor</option><option value="1">Manager / Senior manager</option><option value="2">AVP / VP / Director</option><option value="3">CXO / Function head</option></select></div>
+        </div>
+        <button type="submit" class="btn">Check My Eligibility</button>
+      </form>
+      <div class="elig-res" id="eligRes" aria-live="polite">
+        <p><span class="pill" id="eligPill"></span></p>
+        <p id="eligText"></p>
+        <div id="eligFormBox"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 16: ADMISSION PROCESS ============ -->
+<section id="admission">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Admission process</span>
+      <h2>Four steps. No surprises.</h2>
+    </div>
+    <div class="stepper" id="stepper">
+      <div class="step"><div class="num">1</div><h3>Apply</h3><p>Submit a short application with your professional details.</p></div>
+      <div class="step"><div class="num">2</div><h3>Counselling</h3><p>Speak with an admissions counsellor about fit, schedule and funding.</p></div>
+      <div class="step"><div class="num">3</div><h3>Selection</h3><p>Your profile is reviewed. Outcome shared within [TIMELINE].</p></div>
+      <div class="step"><div class="num">4</div><h3>Enrollment</h3><p>Pay the first installment and join the next cohort starting [START DATE].</p></div>
+    </div>
+    <div class="cta-row rv"><button class="btn" data-cta="admission_start" data-resource="apply">Start Your Application</button></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 17: FAQ ============ -->
+<section id="faqs" class="soft">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-head rv">
+      <span class="eyebrow">FAQs</span>
+      <h2>Questions senior leaders ask before applying</h2>
+    </div>
+    <label class="sr" for="faqSearch">Search FAQs</label>
+    <input class="faq-search" id="faqSearch" type="search" placeholder="Search questions, e.g. fees, recordings, certificate" autocomplete="off">
+    <div id="faqList" class="rv">
+      <details class="faq"><summary>How much time do I need to commit each week? <svg class="i"><use href="#i-chev"/></svg></summary><div class="a">Plan for [HOURS] hours a week: live sessions on [WEEKEND SCHEDULE] plus assignments and project work.</div></details>
+      <details class="faq"><summary>Are the classes live? <svg class="i"><use href="#i-chev"/></svg></summary><div class="a">Yes. Sessions are delivered live by faculty in [LIVE ONLINE / HYBRID] format, with Q&amp;A and discussion.</div></details>
+      <details class="faq"><summary>Will I get recordings if I miss a session? <svg class="i"><use href="#i-chev"/></svg></summary><div class="a">[RECORDING POLICY: availability window and access conditions].</div></details>
+      <details class="faq"><summary>What certificate will I receive? <svg class="i"><use href="#i-chev"/></svg></summary><div class="a">You will receive [CERTIFICATE NAME] from [UNIVERSITY NAME] on meeting the completion criteria: [CRITERIA]. Alumni status: [DETAILS].</div></details>
+      <details class="faq"><summary>What is the total fee and are there payment options? <svg class="i"><use href="#i-chev"/></svg></summary><div class="a">The total fee is [INR AMOUNT] plus [GST DETAILS]. EMI is available from [INR X/MONTH]. Scholarships, corporate sponsorship and referral vouchers: [DETAILS].</div></details>
+      <details class="faq"><summary>Is the campus immersion mandatory? <svg class="i"><use href="#i-chev"/></svg></summary><div class="a">The immersion is [NUMBER OF DAYS] at [LOCATION]. [ATTENDANCE POLICY AND TRAVEL/STAY DETAILS].</div></details>
+      <details class="faq"><summary>Who is eligible to apply? <svg class="i"><use href="#i-chev"/></svg></summary><div class="a">Professionals with [X+ YEARS] of experience and [EDUCATIONAL QUALIFICATION], typically in roles such as [TARGET ROLE].</div></details>
+      <details class="faq"><summary>What learner support is available? <svg class="i"><use href="#i-chev"/></svg></summary><div class="a">Accredian provides [SUPPORT MODEL: program manager, mentor, technical help, response times] throughout the program.</div></details>
+    </div>
+    <p id="faqNone" class="f-note" hidden>No matching questions. Try another word, or talk to a counsellor below.</p>
+    <div class="faq-end rv">
+      <h3>Still have questions?</h3>
+      <div class="cta-row">
+        <button class="btn" data-cta="faq_counsellor" data-resource="counsellor">Talk to a Counsellor</button>
+        <a class="btn" data-wa href="https://wa.me/[NUMBER]" target="_blank" rel="noopener" data-track="faq_whatsapp"><svg class="i"><use href="#i-chat"/></svg>WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ SECTION 18: FOOTER ============ -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="grid g3">
+      <div>
+        <div class="logo-pair" style="margin-bottom:12px"><div class="ph">[UNIVERSITY LOGO]</div><span class="x">x</span><div class="ph">[ACCREDIAN LOGO]</div></div>
+        <p>[PROGRAM NAME] by [UNIVERSITY NAME], delivered with Accredian as learning partner.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:[NUMBER]">Call: [NUMBER]</a></li>
+          <li><a href="https://wa.me/[NUMBER]" data-wa target="_blank" rel="noopener">WhatsApp: [NUMBER]</a></li>
+          <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow and legal</h4>
+        <ul>
+          <li><a href="[LINKEDIN_URL]">LinkedIn</a></li>
+          <li><a href="[YOUTUBE_URL]">YouTube</a></li>
+          <li><a href="[INSTAGRAM_URL]">Instagram</a></li>
+          <li><a href="[PRIVACY_POLICY_URL]">Privacy Policy</a></li>
+          <li><a href="[TERMS_URL]">Terms and Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="trust-mini" style="margin-top:20px"><span>NIRF <b class="cnt">[NIRF RANK]</b></span><span>[ACCREDITATIONS]</span><span>Google <b class="cnt">[X.X/5]</b></span><span><b class="cnt">[N]</b> alumni</span></div>
+    <p class="disc">[UNIVERSITY DISCLAIMER: program is offered by [UNIVERSITY NAME]; Accredian is the learning partner; rankings and accreditations as of [DATE]; outcomes vary by individual.] &copy; [YEAR] Accredian. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile bar -->
+<div class="mbar" role="region" aria-label="Quick actions">
+  <button class="btn" data-cta="mobile_bar_apply" data-resource="apply">Apply Now</button>
+  <a class="sq" href="tel:[NUMBER]" aria-label="Call us" data-track="mobile_call"><svg class="i"><use href="#i-phone"/></svg></a>
+  <a class="sq" data-wa href="https://wa.me/[NUMBER]" target="_blank" rel="noopener" aria-label="WhatsApp us" data-track="mobile_whatsapp"><svg class="i"><use href="#i-chat"/></svg></a>
+</div>
+
+<!-- Chatbot -->
+<button class="chat-fab" id="chatFab" aria-expanded="false" aria-controls="chat" aria-label="Open chat assistant"><svg class="i"><use href="#i-chat"/></svg></button>
+<div class="chat" id="chat" role="dialog" aria-label="Chat assistant">
+  <div class="chat-h"><b>Program assistant</b><button id="chatX" aria-label="Close chat"><svg class="i"><use href="#i-x"/></svg></button></div>
+  <div class="chat-b" id="chatB" aria-live="polite"><div class="msg bot">Hi! What would you like to know about [PROGRAM NAME]?</div></div>
+  <div class="chat-q" id="chatQ">
+    <button class="chip" data-q="fees">Fees</button><button class="chip" data-q="elig">Eligibility</button><button class="chip" data-q="curr">Curriculum</button><button class="chip" data-q="talk">Talk to a Counsellor</button>
+  </div>
+</div>
+
+<!-- Form modal -->
+<div class="overlay" id="formOv" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+  <div class="modal">
+    <button class="x-btn" data-close aria-label="Close form"><svg class="i"><use href="#i-x"/></svg></button>
+    <h3 id="formTitle" style="padding-right:36px">Apply Now</h3>
+    <p class="sub" id="formSub" style="font-size:14px;color:var(--muted)">Two quick steps. Takes under a minute.</p>
+    <div id="modalForm"></div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="overlay" id="lbOv" role="dialog" aria-modal="true" aria-label="Media viewer">
+  <div class="modal wide">
+    <button class="x-btn" data-close aria-label="Close viewer"><svg class="i"><use href="#i-x"/></svg></button>
+    <div class="lb-body" id="lbBody"></div>
+    <div class="lb-cap" id="lbCap"></div>
+  </div>
+</div>
+
+<div class="mbar-pad" style="height:0"></div>
+
+<script>
+(function(){
+'use strict';
+document.documentElement.classList.add('js');
+
+/* ---------------- CONFIG: edit these ---------------- */
+var CONFIG = {
+  FORM_ENDPOINT: '',        // e.g. 'https://example.com/api/leads'. Empty = no network call, tracking only.
+  PROGRAM_FEE: 0,           // numeric INR total. 0 keeps the EMI calculator on its placeholder.
+  EMI_ANNUAL_RATE: 0,       // 0 = no-cost EMI. Set a percent (e.g. 12) to include interest.
+  MIN_EXP_BAND: 2,          // Eligibility checker: minimum experience band (0:<5, 1:5-9, 2:10-14, 3:15+). Match [X+ YEARS].
+  MIN_QUAL: 1,              // minimum qualification band (1 = Graduate)
+  MIN_LEVEL: 1,             // minimum current level band
+  RESOURCE_URLS: {brochure:'[BROCHURE_PDF_URL]', curriculum:'[CURRICULUM_PDF_URL]', readiness:'', outcomes:'[CAREER_OUTCOMES_PDF_URL]'}
+};
+
+var $ = function(s,r){return (r||document).querySelector(s)};
+var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var dl = window.dataLayer = window.dataLayer || [];
+function track(ev,p){var o={event:ev};for(var k in p){o[k]=p[k]}dl.push(o)}
+function store(k,v){try{if(v===undefined)return sessionStorage.getItem(k);sessionStorage.setItem(k,v)}catch(e){return null}}
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------------- UTM capture ---------------- */
+var UTM_KEYS=['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+var utm={};
+(function(){
+  var q=new URLSearchParams(location.search);
+  UTM_KEYS.forEach(function(k){
+    var v=q.get(k)||store('lp_'+k)||'';
+    if(v){utm[k]=v;store('lp_'+k,v)}
+  });
+})();
+
+/* ---------------- Generated placeholders ---------------- */
+$$('[data-logos]').forEach(function(el){
+  var n=+el.dataset.logos,l=el.dataset.label,h='';
+  for(var i=0;i<n;i++)h+='<div class="ph" role="img" aria-label="['+l+']">['+l+']</div>';
+  el.innerHTML=h;
+});
+$$('[data-marquee]').forEach(function(el){
+  var n=+el.dataset.marquee,l=el.dataset.label,h='';
+  for(var r=0;r<2;r++)for(var i=0;i<n;i++)h+='<div class="ph" '+(r?'aria-hidden="true"':'role="img" aria-label="['+l+']"')+'>['+l+']</div>';
+  el.innerHTML=h;
+});
+
+/* Faculty */
+(function(){
+  var h='';
+  for(var i=0;i<4;i++){
+    h+='<article class="card fac"><div class="ph pic" role="img" aria-label="[FACULTY PHOTO]">[FACULTY PHOTO]</div>'+
+    '<h3>[FACULTY NAME]</h3><div class="role">[DESIGNATION], [UNIVERSITY / COMPANY]</div>'+
+    '<span class="badge-s"><span>[X]</span> years of experience</span><br>'+
+    '<button class="tog" aria-expanded="false" aria-controls="fm'+i+'">View profile <svg class="i"><use href="#i-chev"/></svg></button>'+
+    '<div class="more" id="fm'+i+'"><p>[FULL PROFILE: expertise, research, teaching focus, notable work]</p><b>Corporate associations</b><div class="logos" style="grid-template-columns:repeat(2,1fr)"><div class="ph">[COMPANY LOGO]</div><div class="ph">[COMPANY LOGO]</div></div></div></article>';
+  }
+  $('#facGrid').innerHTML=h;
+  $('#facGrid').addEventListener('click',function(e){
+    var b=e.target.closest('.tog');if(!b)return;
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',!open);
+    $('#'+b.getAttribute('aria-controls')).classList.toggle('open',!open);
+    b.firstChild.nodeValue=open?'View profile ':'Hide profile ';
+  });
+})();
+
+/* Curriculum */
+(function(){
+  var M=[
+    ['Strategy and the boardroom','Month [X]','Frame and defend enterprise decisions with a clear business case.','Prepare a board paper on a live workforce or investment decision.'],
+    ['Leading enterprise transformation','Month [X]','Sequence a multi-year transformation and manage adoption risk.','Build a transformation roadmap for your own organisation.'],
+    ['Data, analytics and AI for executives','Month [X]','Select AI use cases, question model outputs and set governance.','Design an analytics dashboard that links people metrics to financial results.'],
+    ['Workforce and organisation design','Month [X]','Design structures and workforce plans that scale with growth.','Redesign one function around projected business volumes.'],
+    ['Leadership, influence and change','Month [X]','Build coalitions, handle resistance and lead through restructuring.','Run a stakeholder plan for a real change initiative.'],
+    ['Capstone and executive presentation','Month [X]','Deliver a solution to a live business problem to faculty and practitioners.','Present your capstone to a panel and receive structured feedback.']
+  ];
+  var rail='',mods='';
+  M.forEach(function(m,i){
+    rail+='<button class="node'+(i?'':' on')+'" data-i="'+i+'"><div class="dot">'+(i+1)+'</div><span>'+m[0]+'</span></button>';
+    mods+='<details class="mod" id="mod'+i+'"'+(i?'':' open')+'><summary><span class="n">'+(i+1)+'</span><span><b>'+m[0]+'</b><small>'+m[1]+'</small></span><svg class="i"><use href="#i-chev"/></svg></summary>'+
+    '<div class="mod-body"><div><h4>What you will be able to do</h4><p style="margin:0">'+m[2]+'</p></div>'+
+    '<div><h4>Business application</h4><p style="margin:0">'+m[3]+'</p></div>'+
+    '<details class="wk"><summary>View week by week</summary><ul><li>Week [A]: [TOPIC]</li><li>Week [B]: [TOPIC]</li><li>Week [C]: [TOPIC]</li><li>Week [D]: [ASSESSMENT / PROJECT CHECKPOINT]</li></ul></details></div></details>';
+  });
+  $('#rail').innerHTML=rail;$('#mods').innerHTML=mods;
+  $('#rail').addEventListener('click',function(e){
+    var n=e.target.closest('.node');if(!n)return;
+    $$('.node').forEach(function(x){x.classList.remove('on')});n.classList.add('on');
+    var d=$('#mod'+n.dataset.i);d.open=true;d.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+  });
+})();
+
+/* AI tools */
+(function(){
+  var h='';
+  for(var i=0;i<8;i++){
+    var L=String.fromCharCode(65+i);
+    h+='<div class="tool" tabindex="0"><div class="ph" role="img" aria-label="[TOOL LOGO '+L+']">[TOOL LOGO]</div><b>[AI TOOL '+L+']</b><div class="tip" role="tooltip">Used for: [WHAT THIS TOOL IS USED FOR IN THE PROGRAM]</div></div>';
+  }
+  var g=$('#toolGrid');g.innerHTML=h;
+  var mq=window.matchMedia('(min-width:600px)');
+  function cols(){g.style.gridTemplateColumns='repeat('+(mq.matches?4:2)+',1fr)'}
+  cols();mq.addEventListener?mq.addEventListener('change',cols):mq.addListener(cols);
+})();
+
+/* Gallery */
+(function(){
+  var C=['campus','classroom','networking','convocation','faculty','campus','networking','classroom','convocation','faculty','campus','classroom'];
+  var H=[190,150,230,170,210,160,200,180,150,220,170,200];
+  var h='';
+  C.forEach(function(c,i){
+    h+='<button data-cat="'+c+'" data-lightbox="[PHOTO: '+c.toUpperCase()+']" aria-label="Open photo: '+c+'"><div class="ph" style="height:'+H[i]+'px">[PHOTO: '+c.toUpperCase()+']</div></button>';
+  });
+  $('#gallery').innerHTML=h;
+})();
+
+/* Transitions */
+(function(){
+  var h='';
+  for(var i=0;i<4;i++){
+    h+='<article class="card tr"><span class="badge-s">Sample: replace with verified data</span>'+
+    '<div class="tr-row"><div class="tr-b"><small>Before</small>[DESIGNATION A]<br>[COMPANY A]</div><div class="tr-arrow" aria-hidden="true">&rarr;</div><div class="tr-a"><small>After</small>[DESIGNATION B]<br>[COMPANY B]</div></div>'+
+    '<div class="meta">[X] years of experience | Moved [TIME] after completing the program</div>'+
+    '<p class="who" style="margin:8px 0 0">"[OPTIONAL ONE-LINE QUOTE]"</p></article>';
+  }
+  $('#trGrid').innerHTML=h;
+})();
+
+/* ---------------- Forms ---------------- */
+var formSeq=0;
+function buildForm(root,opts){
+  var id='f'+(++formSeq);
+  root.innerHTML=
+  '<form id="'+id+'" novalidate>'+
+  '<div class="fprog" aria-live="polite"><span class="stp">Step 1 of 2</span><span class="bar"><i></i></span></div>'+
+  '<div data-s="1">'+
+    '<div class="fld"><label for="'+id+'n">Full name</label><input id="'+id+'n" name="name" autocomplete="name" required><div class="err" id="'+id+'ne"></div></div>'+
+    '<div class="fld"><label for="'+id+'e">Work email</label><input id="'+id+'e" name="email" type="email" autocomplete="email" inputmode="email" required><div class="err" id="'+id+'ee"></div></div>'+
+    '<div class="fld"><label for="'+id+'p">Mobile number</label><div class="phone"><span aria-hidden="true">+91</span><input id="'+id+'p" name="phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10-digit number" required aria-describedby="'+id+'pe"></div><div class="err" id="'+id+'pe"></div></div>'+
+    '<button type="button" class="btn block" data-next>Continue</button>'+
+  '</div>'+
+  '<div data-s="2" hidden>'+
+    '<div class="fld"><label for="'+id+'x">Years of experience</label><select id="'+id+'x" name="experience" required><option value="">Select</option><option>Less than 5 years</option><option>5 to 9 years</option><option>10 to 14 years</option><option>15 to 19 years</option><option>20+ years</option></select><div class="err" id="'+id+'xe"></div></div>'+
+    '<div class="fld"><label for="'+id+'d">Current designation</label><input id="'+id+'d" name="designation" autocomplete="organization-title" required><div class="err" id="'+id+'de"></div></div>'+
+    '<div class="fld"><label for="'+id+'c">Company</label><input id="'+id+'c" name="company" autocomplete="organization" required><div class="err" id="'+id+'ce"></div></div>'+
+    '<div class="f-actions"><button type="button" class="back" data-back>Back</button><button type="submit" class="btn block" data-submit>Submit</button></div>'+
+  '</div>'+
+  '<input type="hidden" name="cta_source"><input type="hidden" name="resource"><input type="hidden" name="page_url">'+
+  UTM_KEYS.map(function(k){return '<input type="hidden" name="'+k+'">'}).join('')+
+  '<p class="f-note">By submitting you agree to be contacted about this program. We never share your details for unrelated marketing.</p>'+
+  '</form>';
+  var f=$('#'+id,root),started=false,state={source:opts.source||'unknown',resource:'apply'};
+
+  function err(fieldId,msg){
+    var inp=$('#'+id+fieldId),box=inp.closest('.fld'),e=$('#'+id+fieldId+'e');
+    if(msg){box.classList.add('bad');e.textContent=msg;inp.setAttribute('aria-invalid','true')}
+    else{box.classList.remove('bad');e.textContent='';inp.removeAttribute('aria-invalid')}
+    return !msg;
+  }
+  var V={
+    n:function(){var v=$('#'+id+'n').value.trim();return err('n',v.length<2||!/[a-z]/i.test(v)?'Enter your full name.':'')},
+    e:function(){var v=$('#'+id+'e').value.trim();return err('e',!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)?'Enter a valid email address.':'')},
+    p:function(){var v=$('#'+id+'p').value;return err('p',!/^[6-9]\d{9}$/.test(v)?'Enter a valid 10-digit Indian mobile number starting with 6 to 9.':'')},
+    x:function(){return err('x',!$('#'+id+'x').value?'Select your experience.':'')},
+    d:function(){return err('d',$('#'+id+'d').value.trim().length<2?'Enter your current designation.':'')},
+    c:function(){return err('c',$('#'+id+'c').value.trim().length<2?'Enter your company name.':'')}
+  };
+  ['n','e','p','x','d','c'].forEach(function(k){
+    var el=$('#'+id+k);
+    el.addEventListener('blur',function(){if(el.value||el.closest('.fld').classList.contains('bad'))V[k]()});
+    el.addEventListener('input',function(){
+      if(k==='p')el.value=el.value.replace(/\D/g,'').slice(0,10);
+      if(el.closest('.fld').classList.contains('bad'))V[k]();
+    });
+    el.addEventListener('focus',function(){
+      if(!started){started=true;track('form_start',{cta_source:state.source,resource:state.resource,form_id:id})}
+    });
+  });
+  function show(step){
+    $$('[data-s]',f).forEach(function(s){s.hidden=s.dataset.s!=String(step)});
+    $('.stp',f).textContent='Step '+step+' of 2';
+    $('.bar i',f).style.width=(step*50)+'%';
+    var first=$('[data-s="'+step+'"] input,[data-s="'+step+'"] select',f);if(first&&step===2)first.focus();
+  }
+  $('[data-next]',f).addEventListener('click',function(){
+    var ok=[V.n(),V.e(),V.p()].every(Boolean);
+    if(!ok){var bad=$('.fld.bad input',f);if(bad)bad.focus();return}
+    track('form_step_complete',{cta_source:state.source,step:1});show(2);
+  });
+  $('[data-back]',f).addEventListener('click',function(){show(1)});
+  f.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&e.target.tagName!=='BUTTON'){e.preventDefault();
+      if(!$('[data-s="1"]',f).hidden)$('[data-next]',f).click();else f.requestSubmit?f.requestSubmit():$('[data-submit]',f).click();}
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(![V.x(),V.d(),V.c()].every(Boolean)){var bad=$('.fld.bad input,.fld.bad select',f);if(bad)bad.focus();return}
+    var fd={};
+    $$('input,select',f).forEach(function(el){if(el.name)fd[el.name]=el.value.trim()});
+    fd.phone='+91'+fd.phone;fd.cta_source=state.source;fd.resource=state.resource;fd.page_url=location.href;
+    UTM_KEYS.forEach(function(k){fd[k]=utm[k]||''});
+    var btn=$('[data-submit]',f);btn.disabled=true;btn.textContent='Submitting...';
+    function done(){
+      track('form_submit',{cta_source:state.source,resource:state.resource,experience:fd.experience});
+      success(fd);
+    }
+    if(CONFIG.FORM_ENDPOINT){
+      fetch(CONFIG.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(fd)}).then(done,done);
+    }else done();
+  });
+  function success(fd){
+    var r=state.resource,res='';
+    var map={brochure:'brochure',curriculum:'curriculum',outcomes:'outcomes',readiness:'readiness'};
+    if(map[r]){
+      var url=CONFIG.RESOURCE_URLS[r]||'';
+      res='<p><a class="btn" href="'+(url||'#')+'" data-dlres="'+r+'" '+(url&&url.charAt(0)!=='['?'download':'')+'><svg class="i"><use href="#i-down"/></svg>'+(r==='readiness'?'View my readiness report':'Download now')+'</a></p>';
+    }
+    root.innerHTML='<div class="f-ok" role="status"><div class="tick"><svg class="i"><use href="#i-check"/></svg></div><h3>Thank you, '+esc(fd.name.split(' ')[0])+'.</h3><p>A counsellor will contact you on '+esc(fd.phone)+' within [RESPONSE TIME].</p>'+res+'<p class="f-note">Prefer to talk now? <a href="tel:[NUMBER]">Call [NUMBER]</a></p></div>';
+    var a=$('[data-dlres]',root);
+    if(a)a.addEventListener('click',function(){track('brochure_download',{resource:a.dataset.dlres,cta_source:state.source})});
+    store('lp_lead','1');
+  }
+  return {
+    set:function(src,res){state.source=src;state.resource=res||'apply';},
+    focus:function(){var n=$('#'+id+'n');if(n)n.focus()}
+  };
+}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+
+var heroF=buildForm($('#heroForm'),{source:'hero_form'});heroF.set('hero_form','apply');
+
+/* ---------------- Overlay helpers ---------------- */
+var lastFocus=null,openOv=null;
+function openOverlay(ov){
+  lastFocus=document.activeElement;ov.classList.add('open');openOv=ov;document.body.style.overflow='hidden';
+  setTimeout(function(){var f=ov.querySelector('input,select,button:not([data-close])')||ov.querySelector('[data-close]');if(f)f.focus()},30);
+}
+function closeOverlay(){
+  if(!openOv)return;openOv.classList.remove('open');
+  var body=$('#lbBody');if(openOv.id==='lbOv')body.innerHTML='';
+  openOv=null;document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){if(openOv)closeOverlay();else closeChat();return}
+  if(e.key==='Tab'&&openOv){
+    var f=$$('button,a[href],input,select,textarea,[tabindex]:not([tabindex="-1"])',openOv).filter(function(x){return !x.disabled&&x.offsetParent!==null});
+    if(!f.length)return;
+    var a=f[0],z=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}
+    else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}
+  }
+});
+$$('.overlay').forEach(function(o){
+  o.addEventListener('click',function(e){if(e.target===o||e.target.closest('[data-close]'))closeOverlay()});
+});
+
+/* ---------------- Lead modal ---------------- */
+var TITLES={
+  apply:['Apply Now','Two quick steps. Takes under a minute.'],
+  brochure:['Download the Brochure','Enter your details and we will unlock the brochure instantly.'],
+  curriculum:['Get the Detailed Curriculum','Module-by-module outcomes and weekly breakdown, sent to you instantly.'],
+  readiness:['Email me my readiness report','We will send a personalised report with your capability gaps.'],
+  callback:['Request a Callback','Tell us a little about you and we will call at a convenient time.'],
+  counsellor:['Talk to a Counsellor','Share your details and a counsellor will reach out.'],
+  scholarship:['Check Scholarship Eligibility','A counsellor will review your profile against [SCHOLARSHIP CRITERIA].'],
+  outcomes:['Download Career Outcomes Report','Verified learner transitions and outcomes.'],
+  exit:['Before you go: get the free brochure','Program details, fees and curriculum in one PDF.']
+};
+var modalF=buildForm($('#modalForm'),{source:'modal'});
+function openForm(src,res){
+  var t=TITLES[res]||TITLES.apply;
+  $('#formTitle').textContent=t[0];$('#formSub').textContent=t[1];
+  /* rebuild if previous submission replaced the form */
+  if(!$('#modalForm form')){modalF=buildForm($('#modalForm'),{source:src})}
+  modalF.set(src,res);
+  openOverlay($('#formOv'));
+}
+document.addEventListener('click',function(e){
+  var c=e.target.closest('[data-cta]');
+  if(c){
+    e.preventDefault();
+    var src=c.dataset.cta,res=c.dataset.resource||'apply';
+    track('cta_click',{cta_label:c.textContent.trim(),cta_source:src,resource:res});
+    openForm(src,res);return;
+  }
+  var t=e.target.closest('[data-track]');
+  if(t)track('contact_click',{cta_source:t.dataset.track});
+  var v=e.target.closest('[data-video]');
+  if(v){track('video_play',{video:v.dataset.video});openMedia('video',v.dataset.video);return}
+  var l=e.target.closest('[data-lightbox]');
+  if(l)openMedia('image',l.dataset.lightbox);
+});
+function openMedia(kind,src){
+  var body=$('#lbBody'),cap=$('#lbCap');
+  if(kind==='video'&&src&&src.charAt(0)!=='['){
+    body.innerHTML='<iframe loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen src="'+esc(src)+'" title="Program video"></iframe>';cap.textContent='';
+  }else if(kind==='video'){
+    body.innerHTML='<div class="ph" role="img" aria-label="Video placeholder">VIDEO PLAYER: '+esc(src)+'<br>(no autoplay with sound)</div>';cap.textContent='Replace the data-video attribute with a YouTube or Vimeo embed URL.';
+  }else{
+    body.innerHTML='<div class="ph" role="img" aria-label="'+esc(src)+'">'+esc(src)+'</div>';cap.textContent='Replace with the real image. Press Esc to close.';
+  }
+  openOverlay($('#lbOv'));
+}
+
+/* ---------------- Scroll: progress, header, reveal ---------------- */
+var prog=$('#progress'),tick=false,finePointer=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+function onScroll(){
+  if(tick)return;tick=true;
+  requestAnimationFrame(function(){
+    var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+    var pct=max>0?h.scrollTop/max:0;
+    prog.style.width=(pct*100)+'%';
+    if(pct>0.6&&!finePointer)maybePopup('scroll');
+    tick=false;
+  });
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+  es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'}):null;
+$$('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+$$('.tr').forEach(function(el){io&&io.observe(el)});
+
+/* ---------------- Counters ---------------- */
+function fmt(c,v){
+  var s=c.dec?v.toFixed(c.dec):String(Math.round(v));
+  if(c.comma)s=s.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+  return c.pre+s+c.suf;
+}
+var cio=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+  es.forEach(function(en){
+    if(!en.isIntersecting)return;
+    var el=en.target,c=el._c;cio.unobserve(el);
+    if(reduce){el.textContent=fmt(c,c.num);return}
+    var t0=null,D=1400;
+    (function step(ts){
+      if(!t0)t0=ts;var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+      el.textContent=fmt(c,c.num*e);
+      if(p<1)requestAnimationFrame(step);
+    })(performance.now());
+  });
+},{threshold:.4}):null;
+$$('.cnt').forEach(function(el){
+  var t=el.textContent.trim();
+  var m=t.charAt(0)!=='['&&t.match(/^(\D*?)(\d[\d,]*\.?\d*)(.*)$/);
+  if(!m||!cio)return;
+  var c={pre:m[1],num:parseFloat(m[2].replace(/,/g,'')),dec:(m[2].split('.')[1]||'').length,comma:m[2].indexOf(',')>-1,suf:m[3]};
+  el._c=c;el.textContent=fmt(c,0);cio.observe(el);
+});
+
+/* ---------------- Tabs (audience) ---------------- */
+(function(){
+  var tabs=$$('.tab');
+  function sel(i){
+    tabs.forEach(function(t,j){
+      var on=i===j;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;
+      $('#'+t.getAttribute('aria-controls')).hidden=!on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(i);track('role_tab',{role:t.textContent})});
+    t.addEventListener('keydown',function(e){
+      var n=e.key==='ArrowRight'?(i+1)%tabs.length:e.key==='ArrowLeft'?(i-1+tabs.length)%tabs.length:-1;
+      if(n>-1){sel(n);tabs[n].focus();e.preventDefault()}
+    });
+  });
+})();
+
+/* ---------------- Before / After ---------------- */
+(function(){
+  var cards=$$('.flip'),b=$('#swBefore'),a=$('#swAfter');
+  function all(on){
+    cards.forEach(function(c){c.classList.toggle('on',on);c.setAttribute('aria-pressed',on)});
+    b.setAttribute('aria-pressed',!on);a.setAttribute('aria-pressed',on);
+  }
+  b.addEventListener('click',function(){all(false)});a.addEventListener('click',function(){all(true)});
+  cards.forEach(function(c){c.addEventListener('click',function(){
+    var on=!c.classList.contains('on');c.classList.toggle('on',on);c.setAttribute('aria-pressed',on);
+  })});
+})();
+
+/* ---------------- Readiness quiz ---------------- */
+$('#quiz').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=$$('#quiz input:checked').length,r=$('#quizResult');
+  var T=n<=2?['Still operating as a functional leader','You are still operating primarily as a functional leader.']:
+        n<=4?['Progressing toward enterprise leadership','You\'re progressing toward enterprise leadership but have important capability gaps.']:
+             ['Well-positioned for strategic leadership','You\'re well-positioned for strategic leadership and can further strengthen your boardroom influence.'];
+  $('#resTitle').textContent=T[0];$('#resText').textContent=T[1];
+  r.classList.add('show');
+  var m=$$('#meter i');m.forEach(function(x){x.classList.remove('on')});
+  var s=$('#scoreN'),k=0;s.textContent='0';
+  (function up(){
+    if(k<n){k++;s.textContent=k;m[k-1].classList.add('on');setTimeout(up,reduce?0:160)}
+  })();
+  r.focus({preventScroll:true});r.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+  track('readiness_quiz_complete',{score:n,band:n<=2?'low':n<=4?'mid':'high'});
+});
+
+/* ---------------- Highlights: tap to open on touch ---------------- */
+$$('.hl').forEach(function(c){c.addEventListener('click',function(){c.classList.toggle('open')})});
+
+/* ---------------- Project + gallery filters ---------------- */
+function filterGroup(btnWrap,items,attr){
+  var w=$(btnWrap);
+  w.addEventListener('click',function(e){
+    var b=e.target.closest('.chip');if(!b)return;
+    $$('.chip',w).forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    var f=b.dataset.f;
+    $$(items).forEach(function(it){it.hidden=!(f==='all'||it.getAttribute(attr)===f)});
+  });
+}
+filterGroup('#projFilter','#projGrid .proj','data-c');
+filterGroup('#galFilter','#gallery button','data-cat');
+
+/* ---------------- Carousel ---------------- */
+(function(){
+  var c=$('#carousel');
+  function by(d){c.scrollBy({left:d*(c.firstElementChild.offsetWidth+14),behavior:reduce?'auto':'smooth'})}
+  $('#carPrev').addEventListener('click',function(){by(-1)});
+  $('#carNext').addEventListener('click',function(){by(1)});
+  c.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){by(1);e.preventDefault()}if(e.key==='ArrowLeft'){by(-1);e.preventDefault()}});
+})();
+
+/* ---------------- Sponsorship letter (generated download) ---------------- */
+$('#dlLetter').addEventListener('click',function(){
+  var txt=['[DATE]','','To,','[MANAGER / HR HEAD NAME]','[COMPANY NAME]','','Subject: Request for sponsorship of [PROGRAM NAME] by [UNIVERSITY NAME]','',
+  'Dear [MANAGER NAME],','',
+  'I would like to request [FULL / PARTIAL] sponsorship for [PROGRAM NAME], a [X MONTHS] executive program offered by [UNIVERSITY NAME] with Accredian as learning partner.','',
+  'How this benefits [COMPANY NAME]:','- [BUSINESS PROBLEM I WILL SOLVE WITH MY CAPSTONE PROJECT]','- [CAPABILITY THE ORGANISATION GAINS: e.g. AI-enabled workforce planning]','- [RETENTION / LEADERSHIP PIPELINE BENEFIT]','',
+  'Program fee: [INR AMOUNT] plus [GST DETAILS]','Schedule: [WEEKEND SCHEDULE]; campus immersion of [NUMBER OF DAYS] at [LOCATION]','',
+  'I will share learnings with the team through [KNOWLEDGE-SHARING PLAN]. I would appreciate your approval.','',
+  'Sincerely,','[YOUR NAME]','[DESIGNATION]','[EMPLOYEE ID]'].join('\n');
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain'}));a.download='sponsorship-letter-template.txt';
+  document.body.appendChild(a);a.click();a.remove();
+  track('brochure_download',{resource:'sponsorship_letter',cta_source:'fees_sponsorship'});
+});
+
+/* ---------------- EMI calculator ---------------- */
+(function(){
+  var w=$('#emiTenure'),out=$('#emiVal'),used=false,months=12;
+  function calc(){
+    if(!CONFIG.PROGRAM_FEE){out.textContent='[INR X/MONTH] over '+months+' months';return}
+    var P=CONFIG.PROGRAM_FEE,r=CONFIG.EMI_ANNUAL_RATE/1200,emi;
+    emi=r?P*r*Math.pow(1+r,months)/(Math.pow(1+r,months)-1):P/months;
+    out.textContent='INR '+Math.round(emi).toLocaleString('en-IN')+' / month';
+  }
+  w.addEventListener('click',function(e){
+    var b=e.target.closest('.chip');if(!b)return;
+    $$('.chip',w).forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    months=+b.dataset.m;calc();
+    if(!used){used=true}
+    track('emi_calculator_use',{tenure_months:months,fee_configured:!!CONFIG.PROGRAM_FEE});
+  });
+  calc();
+})();
+
+/* ---------------- Eligibility checker ---------------- */
+(function(){
+  var eF=null;
+  $('#eligForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=['e1','e2','e3'].map(function(i){return $('#'+i).value});
+    if(v.some(function(x){return x===''})){
+      $('#eligRes').classList.add('show');$('#eligPill').className='pill maybe';$('#eligPill').textContent='Answer all three questions';
+      $('#eligText').textContent='Please select an option for each question to see your result.';$('#eligFormBox').innerHTML='';eF=null;return;
+    }
+    var ok=(+v[0]>=CONFIG.MIN_EXP_BAND)&&(+v[1]>=CONFIG.MIN_QUAL)&&(+v[2]>=CONFIG.MIN_LEVEL);
+    var p=$('#eligPill');
+    p.className='pill '+(ok?'ok':'maybe');
+    p.textContent=ok?'You meet the eligibility criteria':'You may not meet the standard criteria';
+    $('#eligText').textContent=ok?'Share your details to speak with a counsellor and begin your application.':'Our counsellors review profiles individually. Share your details and we will advise on the best path.';
+    $('#eligRes').classList.add('show');
+    var box=$('#eligFormBox');
+    eF=buildForm(box,{source:'eligibility_checker'});eF.set('eligibility_checker',ok?'apply':'counsellor');
+    track('eligibility_check',{eligible:ok});
+    $('#eligRes').scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+  });
+})();
+
+/* ---------------- Stepper ---------------- */
+(function(){
+  var steps=$$('.step');
+  if(!('IntersectionObserver' in window)){steps.forEach(function(s){s.classList.add('on')});return}
+  var so=new IntersectionObserver(function(es){
+    if(es.some(function(x){return x.isIntersecting})){
+      steps.forEach(function(s,i){setTimeout(function(){s.classList.add('on')},reduce?0:i*450)});so.disconnect();
+    }
+  },{threshold:.3});
+  so.observe($('#stepper'));
+})();
+
+/* ---------------- FAQ search ---------------- */
+$('#faqSearch').addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase(),shown=0;
+  $$('#faqList .faq').forEach(function(d){
+    var m=!q||d.textContent.toLowerCase().indexOf(q)>-1;d.hidden=!m;if(m)shown++;
+    if(q&&m)d.open=true;
+  });
+  $('#faqNone').hidden=shown>0;
+});
+
+/* ---------------- Chatbot ---------------- */
+var chat=$('#chat'),fab=$('#chatFab');
+function closeChat(){chat.classList.remove('open');fab.setAttribute('aria-expanded','false')}
+fab.addEventListener('click',function(){
+  var o=chat.classList.toggle('open');fab.setAttribute('aria-expanded',o);
+  if(o)track('chat_open',{});
+});
+$('#chatX').addEventListener('click',closeChat);
+$('#chatQ').addEventListener('click',function(e){
+  var b=e.target.closest('[data-q]');if(!b)return;
+  var A={
+    fees:'The total fee is [INR AMOUNT] plus [GST DETAILS]. EMI starts from [INR X/MONTH]. Scholarships and corporate sponsorship are available: [DETAILS].',
+    elig:'You need [X+ YEARS] of experience and [EDUCATIONAL QUALIFICATION]. Try the "Am I Eligible?" checker on this page.',
+    curr:'The program has six outcome-based modules ending in a capstone. I can email you the detailed curriculum.',
+    talk:'Sure. Please share your details and a counsellor will reach out.'
+  };
+  var B=$('#chatB');
+  B.insertAdjacentHTML('beforeend','<div class="msg me">'+esc(b.textContent)+'</div><div class="msg bot">'+esc(A[b.dataset.q])+'</div>');
+  if(b.dataset.q==='curr')B.insertAdjacentHTML('beforeend','<div class="msg bot"><button class="btn" data-cta="chat_curriculum" data-resource="curriculum">Get the Curriculum</button></div>');
+  if(b.dataset.q==='talk')B.insertAdjacentHTML('beforeend','<div class="msg bot"><button class="btn" data-cta="chat_counsellor" data-resource="counsellor">Talk to a Counsellor</button></div>');
+  B.scrollTop=B.scrollHeight;
+  track('chat_quick_reply',{topic:b.dataset.q});
+});
+
+/* ---------------- WhatsApp link tracking handled via data-track; keep hrefs bracket placeholders until real number set ---------------- */
+
+/* ---------------- Exit-intent / scroll popup (once per session) ---------------- */
+var popped=store('lp_popup')==='1';
+function maybePopup(why){
+  if(popped||openOv||store('lp_lead')==='1')return;
+  popped=true;store('lp_popup','1');
+  track('popup_trigger',{trigger:why});
+  openForm('popup_'+why,'exit');
+}
+if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+  document.addEventListener('mouseout',function(e){
+    if(!e.relatedTarget&&e.clientY<=0)maybePopup('exit_intent');
+  });
+}
+
+})();
+</script>
+</body>
+</html>
