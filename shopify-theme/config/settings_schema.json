@@ -1,0 +1,48 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Timkolas",
+    "theme_version": "0.1.0",
+    "theme_author": "Timkolas",
+    "theme_documentation_url": "https://github.com/khushboorawat-gif/lp",
+    "theme_support_url": "https://github.com/khushboorawat-gif/lp"
+  },
+  {
+    "name": "Business details",
+    "settings": [
+      { "type": "paragraph", "content": "Leave a field empty to hide it. Never enter details you have not confirmed." },
+      { "type": "text", "id": "legal_name", "label": "Legal business name" },
+      { "type": "textarea", "id": "business_address", "label": "Registered address" },
+      { "type": "text", "id": "support_email", "label": "Support email" },
+      { "type": "text", "id": "support_phone", "label": "Support phone" },
+      { "type": "text", "id": "support_hours", "label": "Support hours" },
+      { "type": "text", "id": "gstin", "label": "GSTIN" }
+    ]
+  },
+  {
+    "name": "Service promises",
+    "settings": [
+      { "type": "paragraph", "content": "These show on product pages and the cart. Only fill them with policies you really operate." },
+      { "type": "text", "id": "promise_delivery", "label": "Delivery", "info": "Example: Ships in 1-2 working days" },
+      { "type": "text", "id": "promise_warranty", "label": "Warranty", "info": "Example: X months seller warranty" },
+      { "type": "text", "id": "promise_returns", "label": "Returns", "info": "Example: X day replacement for damaged items" },
+      { "type": "text", "id": "promise_payments", "label": "Payments", "info": "Only list methods enabled in Settings > Payments" }
+    ]
+  },
+  {
+    "name": "Reviews",
+    "settings": [
+      { "type": "checkbox", "id": "show_review_fallback", "label": "Show 'No reviews yet' box", "default": true, "info": "Turn off after you install a reviews app and add its block to the product page." }
+    ]
+  },
+  {
+    "name": "Social and SEO",
+    "settings": [
+      { "type": "image_picker", "id": "share_image", "label": "Default sharing image" },
+      { "type": "checkbox", "id": "indexable", "label": "Allow search engines to index the store", "default": true },
+      { "type": "url", "id": "social_instagram", "label": "Instagram URL" },
+      { "type": "url", "id": "social_youtube", "label": "YouTube URL" },
+      { "type": "url", "id": "social_facebook", "label": "Facebook URL" }
+    ]
+  }
+]

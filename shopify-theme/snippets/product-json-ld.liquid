@@ -1,0 +1,44 @@
+{%- comment -%}
+  Product structured data. Matches visible price and availability only.
+  Deliberately has NO aggregateRating or review markup. Your reviews app adds its own once real reviews exist.
+{%- endcomment -%}
+{%- assign v = product.selected_or_first_available_variant -%}
+{%- assign ld_image = product.featured_media | image_url: width: 1200 -%}
+{%- unless ld_image contains 'http' -%}{%- assign ld_image = ld_image | prepend: 'https:' -%}{%- endunless -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "url": {{ canonical_url | json }},
+  "description": {{ product.description | strip_html | truncate: 500 | json }},
+  {%- if product.featured_media %}
+  "image": {{ ld_image | json }},
+  {%- endif %}
+  {%- if v.sku != blank %}
+  "sku": {{ v.sku | json }},
+  {%- endif %}
+  {%- if v.barcode != blank %}
+  "gtin": {{ v.barcode | json }},
+  {%- endif %}
+  "brand": { "@type": "Brand", "name": {{ product.vendor | default: shop.name | json }} },
+  "offers": {
+    "@type": "Offer",
+    "url": {{ canonical_url | json }},
+    "priceCurrency": {{ cart.currency.iso_code | json }},
+    "price": {{ v.price | divided_by: 100.0 | json }},
+    "availability": "{% if v.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "itemCondition": "https://schema.org/NewCondition"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ shop.url | json }} },
+    { "@type": "ListItem", "position": 2, "name": {{ product.title | json }}, "item": {{ canonical_url | json }} }
+  ]
+}
+</script>

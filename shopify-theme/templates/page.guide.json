@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "intro": { "type": "page-content", "settings": {} },
+    "paths": {
+      "type": "experience-tiles",
+      "blocks": {
+        "tv": { "type": "tile", "settings": { "title": "Play on my TV", "text": "Explore TV-connected consoles.", "cta": "See TV consoles" } },
+        "go": { "type": "tile", "settings": { "title": "Play on the go", "text": "Explore handheld consoles with a built-in screen.", "cta": "See handhelds" } },
+        "two": { "type": "tile", "settings": { "title": "Play with someone", "text": "Compare models that include two controllers in the box.", "cta": "See 2-player models" } },
+        "gift": { "type": "tile", "settings": { "title": "Buying a gift", "text": "Compare price, set-up effort and what is in the box.", "cta": "See gift picks" } }
+      },
+      "block_order": ["tv", "go", "two", "gift"],
+      "settings": { "heading": "Which Timkolas gaming console is right for you?", "subheading": "Pick the situation closest to yours." }
+    },
+    "compare": { "type": "cta-banner", "settings": { "heading": "Still deciding?", "text": "Put up to three models side by side." } }
+  },
+  "order": ["intro", "paths", "compare"]
+}

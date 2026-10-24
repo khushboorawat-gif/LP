@@ -1,0 +1,33 @@
+<header class="site-header">
+  <div class="container header-row">
+    <a href="{{ routes.root_url }}" class="logo-text" aria-label="{{ shop.name }} home">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 300 | image_tag: height: 36, alt: shop.name, loading: 'eager' }}
+      {%- else -%}{{ shop.name | upcase }}{%- endif -%}
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      {%- assign menu = linklists[section.settings.menu] -%}
+      {%- for link in menu.links -%}<a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>{%- endfor -%}
+    </nav>
+    <div class="header-tools">
+      <form class="search-form" action="{{ routes.search_url }}" method="get" role="search">
+        <label for="header-search" class="visually-hidden">Search products</label>
+        <input id="header-search" class="input" type="search" name="q" placeholder="Search consoles" value="{{ search.terms | escape }}">
+        <input type="hidden" name="type" value="product">
+      </form>
+      <a href="{{ routes.cart_url }}" class="icon-btn" aria-label="Cart">
+        Cart <span class="cart-count" data-cart-count data-empty="{% if cart.item_count == 0 %}true{% else %}false{% endif %}">{{ cart.item_count }}</span>
+      </a>
+      <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="main-nav">Menu</button>
+    </div>
+  </div>
+</header>
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "image_picker", "id": "logo", "label": "Logo image (optional)" }
+  ]
+}
+{% endschema %}

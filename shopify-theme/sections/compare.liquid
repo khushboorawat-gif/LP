@@ -1,0 +1,72 @@
+<section class="section">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a> / {{ section.settings.heading }}</nav>
+    <h1>{{ section.settings.heading }}</h1>
+    <p class="lead" style="margin-bottom:28px">{{ section.settings.intro }}</p>
+
+    {%- assign p1 = section.settings.product_1 -%}
+    {%- assign p2 = section.settings.product_2 -%}
+    {%- assign p3 = section.settings.product_3 -%}
+    {%- if p1 == blank and p2 == blank -%}
+      <p class="notice">Choose two or three products in the theme editor to build the comparison.</p>
+    {%- else -%}
+      {%- assign rows = 'format|Format,best_for|Best for,display|Display,video_output|Video output,storage|Storage,preloaded_games|Preloaded games,supported_systems|Supported systems,controllers|Controllers included,power|Power,battery|Battery,warranty|Warranty' | split: ',' -%}
+      <div class="table-scroll">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Attribute</span></th>
+              {%- if p1 %}<th scope="col">{% render 'compare-head', p: p1 %}</th>{% endif -%}
+              {%- if p2 %}<th scope="col">{% render 'compare-head', p: p2 %}</th>{% endif -%}
+              {%- if p3 %}<th scope="col">{% render 'compare-head', p: p3 %}</th>{% endif -%}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Price</th>
+              {%- if p1 %}<td><strong>{{ p1.price | money_without_trailing_zeros }}</strong></td>{% endif -%}
+              {%- if p2 %}<td><strong>{{ p2.price | money_without_trailing_zeros }}</strong></td>{% endif -%}
+              {%- if p3 %}<td><strong>{{ p3.price | money_without_trailing_zeros }}</strong></td>{% endif -%}
+            </tr>
+            {%- for row in rows -%}
+              {%- assign parts = row | split: '|' -%}
+              {%- assign key = parts[0] -%}
+              {%- assign any = false -%}
+              {%- if p1 != blank and p1.metafields.custom[key] != blank %}{% assign any = true %}{% endif -%}
+              {%- if p2 != blank and p2.metafields.custom[key] != blank %}{% assign any = true %}{% endif -%}
+              {%- if p3 != blank and p3.metafields.custom[key] != blank %}{% assign any = true %}{% endif -%}
+              {%- if any -%}
+                <tr>
+                  <th scope="row">{{ parts[1] }}</th>
+                  {%- if p1 %}<td>{% if p1.metafields.custom[key] != blank %}{{ p1.metafields.custom[key] }}{% else %}<span class="tbc">To confirm</span>{% endif %}</td>{% endif -%}
+                  {%- if p2 %}<td>{% if p2.metafields.custom[key] != blank %}{{ p2.metafields.custom[key] }}{% else %}<span class="tbc">To confirm</span>{% endif %}</td>{% endif -%}
+                  {%- if p3 %}<td>{% if p3.metafields.custom[key] != blank %}{{ p3.metafields.custom[key] }}{% else %}<span class="tbc">To confirm</span>{% endif %}</td>{% endif -%}
+                </tr>
+              {%- endif -%}
+            {%- endfor -%}
+            <tr>
+              <th scope="row"><span class="visually-hidden">Action</span></th>
+              {%- if p1 %}<td><a class="btn btn-primary" href="{{ p1.url }}">View product</a></td>{% endif -%}
+              {%- if p2 %}<td><a class="btn btn-primary" href="{{ p2.url }}">View product</a></td>{% endif -%}
+              {%- if p3 %}<td><a class="btn btn-primary" href="{{ p3.url }}">View product</a></td>{% endif -%}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-top:12px">A row appears only when at least one model has a confirmed value. Missing values read "To confirm".</p>
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Compare consoles",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Compare Timkolas consoles" },
+    { "type": "textarea", "id": "intro", "label": "Intro", "default": "See the differences side by side. Only confirmed specifications are shown." },
+    { "type": "product", "id": "product_1", "label": "Product 1" },
+    { "type": "product", "id": "product_2", "label": "Product 2" },
+    { "type": "product", "id": "product_3", "label": "Product 3 (optional)" }
+  ],
+  "presets": [{ "name": "Compare consoles" }]
+}
+{% endschema %}

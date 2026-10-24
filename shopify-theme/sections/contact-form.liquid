@@ -1,0 +1,36 @@
+<section class="section">
+  <div class="container narrow">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a> / {{ page.title }}</nav>
+    <h1>{{ page.title }}</h1>
+    <div class="rte" style="margin-bottom:24px">{{ page.content }}</div>
+    {%- form 'contact', id: 'contact-form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="notice notice-ok" role="status">Thanks. We have your message and will reply by email.</div>
+      {%- endif -%}
+      {%- if form.errors -%}
+        <div class="notice notice-error" role="alert">{{ form.errors | default_errors }}</div>
+      {%- endif -%}
+      <div class="field">
+        <label for="c-topic">What do you need help with?</label>
+        <select class="input" id="c-topic" name="contact[Topic]">
+          <option>Question about a product</option>
+          <option>Order or delivery</option>
+          <option>Report a damaged or defective product</option>
+          <option>Warranty</option>
+          <option>Returns or refunds</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label for="c-name">Name</label><input class="input" id="c-name" name="contact[name]" autocomplete="name" required value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"></div>
+      <div class="field"><label for="c-email">Email</label><input class="input" id="c-email" type="email" name="contact[email]" autocomplete="email" required value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"></div>
+      <div class="field"><label for="c-phone">Phone (optional)</label><input class="input" id="c-phone" type="tel" name="contact[phone]" autocomplete="tel"></div>
+      <div class="field"><label for="c-order">Order number (if any)</label><input class="input" id="c-order" name="contact[Order number]"></div>
+      <div class="field"><label for="c-body">Message</label><textarea class="input" id="c-body" name="contact[body]" required></textarea></div>
+      <p style="font-size:13px;color:var(--muted)">For damaged or defective items, include your order number and describe the problem. Photos can be sent by replying to our email.</p>
+      <button type="submit" class="btn btn-primary">Send message</button>
+    {%- endform -%}
+  </div>
+</section>
+{% schema %}
+{ "name": "Contact form" }
+{% endschema %}

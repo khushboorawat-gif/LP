@@ -1,0 +1,38 @@
+<section class="section">
+  <div class="container">
+    {%- if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif -%}
+    {%- if section.settings.subheading != blank %}<p class="lead" style="margin-bottom:32px">{{ section.settings.subheading }}</p>{% endif -%}
+    <div class="grid grid-3">
+      {%- for block in section.blocks -%}
+        <a class="tile" href="{{ block.settings.link | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+          <span class="more">{{ block.settings.cta }}</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Shop by experience",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Find your kind of play" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Start with where you want to play." }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Tile",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "On the TV" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "TV game sticks with controllers. Best for the living room." },
+        { "type": "text", "id": "cta", "label": "Link text", "default": "Shop now" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "Shop by experience" }]
+}
+{% endschema %}

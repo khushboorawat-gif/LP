@@ -1,0 +1,35 @@
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      {%- if section.settings.eyebrow != blank %}<div class="eyebrow">{{ section.settings.eyebrow }}</div>{% endif -%}
+      <h1>{{ section.settings.heading }}</h1>
+      {%- if section.settings.text != blank %}<p class="lead">{{ section.settings.text }}</p>{% endif -%}
+      <div class="hero-actions">
+        {%- if section.settings.cta_label != blank %}<a class="btn btn-primary" href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}">{{ section.settings.cta_label }}</a>{% endif -%}
+        {%- if section.settings.cta2_label != blank %}<a class="btn btn-dark-outline" href="{{ section.settings.cta2_link | default: routes.root_url }}">{{ section.settings.cta2_label }}</a>{% endif -%}
+      </div>
+    </div>
+    <div class="hero-media">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 1000 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '500, 750, 1000', sizes: '(min-width: 980px) 600px, 100vw' }}
+      {%- else -%}
+        <div class="placeholder">Hero image: upload a real photo of the console, controllers and a TV</div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "Gaming consoles for TV and on the go" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Bring game night back." },
+    { "type": "textarea", "id": "text", "label": "Supporting text", "default": "Plug a Timkolas console into your TV or take a handheld anywhere. Pick the one that fits how you play." },
+    { "type": "text", "id": "cta_label", "label": "Main button label", "default": "Shop consoles" },
+    { "type": "url", "id": "cta_link", "label": "Main button link" },
+    { "type": "text", "id": "cta2_label", "label": "Second button label", "default": "Help me choose" },
+    { "type": "url", "id": "cta2_link", "label": "Second button link" },
+    { "type": "image_picker", "id": "image", "label": "Image" }
+  ]
+}
+{% endschema %}

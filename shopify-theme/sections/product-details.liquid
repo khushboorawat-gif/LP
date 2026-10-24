@@ -1,0 +1,98 @@
+{%- comment -%}
+  Everything here is driven by product description and custom.* metafields.
+  A row or block appears only when it has a value, so unverified data never shows as fact.
+{%- endcomment -%}
+{%- assign spec_defs = 'format|Format,display|Display,video_output|Video output,storage|Storage,preloaded_games|Preloaded games,supported_systems|Supported systems,controllers|Controllers,connectivity|Connectivity,power|Power,battery|Battery,dimensions|Size and weight,warranty|Warranty' | split: ',' -%}
+{%- assign has_specs = false -%}
+{%- for def in spec_defs -%}
+  {%- assign key = def | split: '|' | first -%}
+  {%- if product.metafields.custom[key] != blank -%}{%- assign has_specs = true -%}{%- endif -%}
+{%- endfor -%}
+
+<section class="section section-soft">
+  <div class="container detail-layout">
+    <div class="detail-main">
+      {%- if product.description != blank -%}
+        <h2>Overview</h2>
+        <div class="rte" style="margin-bottom:32px">{{ product.description }}</div>
+      {%- endif -%}
+
+      {%- if product.metafields.custom.in_the_box != blank -%}
+        <h2>What is in the box</h2>
+        <ul style="margin-bottom:32px;line-height:1.9">
+          {%- assign box_list = product.metafields.custom.in_the_box | newline_to_br | split: '<br />' -%}
+          {%- for item in box_list -%}{%- assign t = item | strip | strip_newlines -%}{%- if t != blank -%}<li>{{ t }}</li>{%- endif -%}{%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if has_specs -%}
+        <h2>Specifications</h2>
+        <table class="spec-table" style="margin-bottom:32px">
+          <tbody>
+            {%- for def in spec_defs -%}
+              {%- assign parts = def | split: '|' -%}
+              {%- assign val = product.metafields.custom[parts[0]] -%}
+              {%- if val != blank -%}<tr><th scope="row">{{ parts[1] }}</th><td>{{ val }}</td></tr>{%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+      {%- endif -%}
+
+      {%- if product.metafields.custom.setup_steps != blank -%}
+        <h2>Setup</h2>
+        <ol style="margin-bottom:32px;line-height:1.9">
+          {%- assign step_list = product.metafields.custom.setup_steps | newline_to_br | split: '<br />' -%}
+          {%- for s in step_list -%}{%- assign t = s | strip | strip_newlines -%}{%- if t != blank -%}<li>{{ t }}</li>{%- endif -%}{%- endfor -%}
+        </ol>
+      {%- endif -%}
+    </div>
+
+    <aside class="detail-side">
+      <div class="callout">
+        <h3 style="color:#fff">Before you buy</h3>
+        <p>{{ product.metafields.custom.compatibility | default: section.settings.default_compatibility }}</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="container">
+    <h2>Customer reviews</h2>
+    {%- for block in section.blocks -%}
+      {%- if block.type == '@app' -%}{% render block %}{%- endif -%}
+    {%- endfor -%}
+    {%- if settings.show_review_fallback -%}
+      <div class="reviews-box">
+        <strong>No reviews yet</strong>
+        <p style="margin:6px 0 0;color:var(--muted)">Ratings and reviews appear here only when real buyers of this exact model have written them. Verified Purchase labels come from your reviews app and are based on real orders.</p>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{%- assign related_collection = product.collections.first -%}
+{%- if related_collection != blank and related_collection.products_count > 1 -%}
+<section class="section section-soft">
+  <div class="container">
+    <h2>You may also like</h2>
+    <div class="grid grid-4">
+      {%- assign shown = 0 -%}
+      {%- for p in related_collection.products -%}
+        {%- if p.id != product.id and shown < 4 -%}{% render 'product-card', product: p %}{%- assign shown = shown | plus: 1 -%}{%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Product details",
+  "settings": [
+    { "type": "textarea", "id": "default_compatibility", "label": "Default compatibility note", "default": "You need a TV or monitor with a free HDMI port. Check each model's box contents for what is and is not included." }
+  ],
+  "blocks": [
+    { "type": "@app" }
+  ]
+}
+{% endschema %}

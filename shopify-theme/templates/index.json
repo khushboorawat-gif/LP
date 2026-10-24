@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "hero": { "type": "hero", "settings": {} },
+    "experience": {
+      "type": "experience-tiles",
+      "blocks": {
+        "tv": { "type": "tile", "settings": { "title": "On the TV", "text": "TV game sticks with controllers. Best for the living room and playing with family.", "cta": "Shop TV consoles" } },
+        "handheld": { "type": "tile", "settings": { "title": "On the go", "text": "Handheld consoles with a built-in screen. Best for travel and solo play.", "cta": "Shop handhelds" } },
+        "two": { "type": "tile", "settings": { "title": "For two players", "text": "Models that include two controllers in the box. Also a simple gift choice.", "cta": "Shop 2-player models" } }
+      },
+      "block_order": ["tv", "handheld", "two"],
+      "settings": {}
+    },
+    "featured": { "type": "featured-products", "settings": { "heading": "Shop the range", "count": 4 } },
+    "steps": {
+      "type": "steps",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Connect", "text": "Plug the console into your TV's HDMI port and power it." } },
+        "s2": { "type": "step", "settings": { "title": "Pair controllers", "text": "Switch on the controllers that come in the box." } },
+        "s3": { "type": "step", "settings": { "title": "Play", "text": "Pick a game from the menu and start playing." } }
+      },
+      "block_order": ["s1", "s2", "s3"],
+      "settings": {}
+    },
+    "trust": { "type": "trust-strip", "settings": {} },
+    "guide": { "type": "cta-banner", "settings": {} },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "item", "settings": { "question": "Will it work with my TV?", "answer": "TV consoles connect over HDMI. Check that your TV or monitor has a free HDMI port. Each product page lists what is in the box." } },
+        "q2": { "type": "item", "settings": { "question": "Which games are included?", "answer": "Each model lists its own preloaded library and supported systems on its product page. We do not claim modern PlayStation, Xbox or Nintendo titles." } },
+        "q3": { "type": "item", "settings": { "question": "How long does delivery take?", "answer": "See our Shipping Policy page for current delivery times and charges." } },
+        "q4": { "type": "item", "settings": { "question": "What if my console arrives damaged or faulty?", "answer": "Contact us with your order number from the Contact page and we will help. See our Returns and Warranty pages for details." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {}
+    }
+  },
+  "order": ["hero", "experience", "featured", "steps", "trust", "guide", "faq"]
+}

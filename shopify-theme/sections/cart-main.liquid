@@ -1,0 +1,59 @@
+<section class="section">
+  <div class="container">
+    <h1>Your cart</h1>
+    {%- if cart.item_count == 0 -%}
+      <p class="lead">Your cart is empty.</p>
+      <a class="btn btn-primary" href="{{ routes.all_products_collection_url }}">Continue shopping</a>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post" class="cart-layout" novalidate>
+        <div class="cart-items">
+          {%- for item in cart.items -%}
+            <div class="cart-line">
+              <a href="{{ item.url }}">
+                {%- if item.image -%}{%- assign line_alt = item.image.alt | default: item.product.title -%}{{ item.image | image_url: width: 160 | image_tag: loading: 'lazy', alt: line_alt }}{%- else -%}<div class="placeholder placeholder-light" style="width:80px;height:80px;padding:4px;font-size:11px">No image</div>{%- endif -%}
+              </a>
+              <div>
+                <a href="{{ item.url }}" style="font-weight:600">{{ item.product.title }}</a>
+                {%- unless item.product.has_only_default_variant %}<div style="font-size:14px;color:var(--muted)">{{ item.variant.title }}</div>{% endunless -%}
+                <div style="font-size:14px;margin:4px 0">{{ item.final_price | money_without_trailing_zeros }}</div>
+                {%- for discount in item.line_level_discount_allocations -%}<div style="font-size:13px;color:var(--ok)">{{ discount.discount_application.title }} (-{{ discount.amount | money_without_trailing_zeros }})</div>{%- endfor -%}
+                <div class="qty" style="display:inline-flex;margin-top:8px">
+                  <button type="button" data-qty-step="-1" aria-label="Decrease quantity of {{ item.product.title | escape }}">-</button>
+                  <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="Quantity of {{ item.product.title | escape }}">
+                  <button type="button" data-qty-step="1" aria-label="Increase quantity of {{ item.product.title | escape }}">+</button>
+                </div>
+                <a href="{{ item.url_to_remove }}" style="margin-left:12px;text-decoration:underline;font-size:14px">Remove</a>
+              </div>
+              <div style="font-weight:600">{{ item.final_line_price | money_without_trailing_zeros }}</div>
+            </div>
+          {%- endfor -%}
+          <div style="border-top:1px solid var(--line);padding-top:16px"><a href="{{ routes.all_products_collection_url }}" style="text-decoration:underline">Continue shopping</a></div>
+        </div>
+
+        <aside class="cart-side">
+          <div class="cart-summary">
+            <h2 style="font-size:22px">Order summary</h2>
+            <div class="row-between"><span>Subtotal</span><strong>{{ cart.items_subtotal_price | money_without_trailing_zeros }}</strong></div>
+            {%- if cart.cart_level_discount_applications.size > 0 -%}
+              {%- for d in cart.cart_level_discount_applications -%}<div class="row-between" style="color:var(--ok)"><span>{{ d.title }}</span><span>-{{ d.total_allocated_amount | money_without_trailing_zeros }}</span></div>{%- endfor -%}
+            {%- endif -%}
+            <p style="font-size:13px;color:var(--muted);margin:12px 0">Shipping, taxes and discount codes are applied at checkout.</p>
+            <label for="cart-note">Order note (optional)</label>
+            <textarea id="cart-note" class="input" name="note" style="min-height:80px">{{ cart.note }}</textarea>
+            <button type="submit" name="update" class="btn btn-outline btn-block" style="margin-top:12px">Update cart</button>
+            <button type="submit" name="checkout" class="btn btn-primary btn-block" style="margin-top:12px">Checkout</button>
+            {%- if settings.promise_returns != blank or settings.promise_delivery != blank -%}
+              <div style="font-size:13px;color:var(--muted);margin-top:16px">
+                {%- if settings.promise_delivery != blank %}<div>Delivery: {{ settings.promise_delivery }}</div>{% endif -%}
+                {%- if settings.promise_returns != blank %}<div>Returns: {{ settings.promise_returns }}</div>{% endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </aside>
+      </form>
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+{ "name": "Cart" }
+{% endschema %}

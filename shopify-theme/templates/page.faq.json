@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "intro": { "type": "page-content", "settings": {} },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "item", "settings": { "question": "Will it work with my TV?", "answer": "TV consoles connect over HDMI. Check that your TV or monitor has a free HDMI port." } },
+        "q2": { "type": "item", "settings": { "question": "Do I need internet to play?", "answer": "To be confirmed per model. Edit this answer once verified." } },
+        "q3": { "type": "item", "settings": { "question": "How do I track my order?", "answer": "Use the link in your dispatch email, or see the Order Tracking page." } },
+        "q4": { "type": "item", "settings": { "question": "How do I report a damaged or defective product?", "answer": "Use the Contact page and choose 'Report a damaged or defective product'. Include your order number." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": { "heading": "Frequently asked questions" }
+    }
+  },
+  "order": ["intro", "faq"]
+}

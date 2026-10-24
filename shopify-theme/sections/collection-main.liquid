@@ -1,0 +1,68 @@
+{%- paginate collection.products by section.settings.per_page -%}
+<section class="section">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a> / {{ collection.title }}</nav>
+    <h1>{{ collection.title }}</h1>
+    {%- if collection.description != blank %}<div class="lead" style="margin-bottom:28px">{{ collection.description }}</div>{% endif -%}
+
+    <form method="get" id="filter-form" class="collection-layout">
+      {%- if collection.filters.size > 0 -%}
+      <aside class="filters" aria-label="Filters">
+        {%- for filter in collection.filters -%}
+          <details open>
+            <summary>{{ filter.label }}</summary>
+            {%- case filter.type -%}
+              {%- when 'price_range' -%}
+                <div style="display:flex;gap:8px;padding-bottom:8px">
+                  <div><label for="min-{{ forloop.index }}">From</label><input class="input" id="min-{{ forloop.index }}" type="number" inputmode="numeric" min="0" name="{{ filter.min_value.param_name }}" value="{% if filter.min_value.value %}{{ filter.min_value.value | money_without_currency | replace: ',', '' }}{% endif %}" placeholder="0"></div>
+                  <div><label for="max-{{ forloop.index }}">To</label><input class="input" id="max-{{ forloop.index }}" type="number" inputmode="numeric" min="0" name="{{ filter.max_value.param_name }}" value="{% if filter.max_value.value %}{{ filter.max_value.value | money_without_currency | replace: ',', '' }}{% endif %}" placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"></div>
+                </div>
+              {%- else -%}
+                {%- for value in filter.values -%}
+                  <label>
+                    <input type="{% if filter.type == 'boolean' %}radio{% else %}checkbox{% endif %}" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %}checked{% endif %}{% if value.count == 0 and value.active == false %} disabled{% endif %} data-auto-submit>
+                    {{ value.label | escape }} ({{ value.count }})
+                  </label>
+                {%- endfor -%}
+            {%- endcase -%}
+          </details>
+        {%- endfor -%}
+        <button type="submit" class="btn btn-outline btn-block" style="margin-top:12px">Apply filters</button>
+        {%- if collection.filters.size > 0 and collection.current_vendor == blank %}<a href="{{ collection.url }}" style="display:block;margin-top:10px;text-align:center;text-decoration:underline">Clear all</a>{% endif -%}
+      </aside>
+      {%- endif -%}
+
+      <div class="results">
+        <div class="toolbar">
+          <div>{{ collection.products_count }} product{% if collection.products_count != 1 %}s{% endif %}</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <label for="sort_by" style="margin:0">Sort by</label>
+            <select class="input" style="width:auto" id="sort_by" name="sort_by" data-auto-submit>
+              {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+              {%- for option in collection.sort_options -%}
+                <option value="{{ option.value }}" {% if option.value == sort_by %}selected{% endif %}>{{ option.name }}</option>
+              {%- endfor -%}
+            </select>
+          </div>
+        </div>
+        {%- if collection.products.size == 0 -%}
+          <p class="lead">No products match these filters. Clear a filter to see more.</p>
+        {%- else -%}
+          <div class="grid grid-3">
+            {%- for product in collection.products -%}{% render 'product-card', product: product %}{%- endfor -%}
+          </div>
+        {%- endif -%}
+        {%- if paginate.pages > 1 -%}<div class="pagination">{{ paginate | default_pagination }}</div>{%- endif -%}
+      </div>
+    </form>
+  </div>
+</section>
+{%- endpaginate -%}
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    { "type": "range", "id": "per_page", "label": "Products per page", "min": 6, "max": 24, "step": 3, "default": 12 }
+  ]
+}
+{% endschema %}

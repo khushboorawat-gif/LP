@@ -1,0 +1,112 @@
+{%- assign current = product.selected_or_first_available_variant -%}
+<section class="section" style="padding-top:24px">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a> /
+      {%- if collection %} <a href="{{ collection.url }}">{{ collection.title }}</a> /{% elsif product.collections.size > 0 %} <a href="{{ product.collections.first.url }}">{{ product.collections.first.title }}</a> /{% endif %}
+      {{ product.title }}
+    </nav>
+
+    <div class="product-layout">
+      <div class="product-gallery">
+        <div class="gallery-main" data-gallery-main>
+          {%- if product.featured_media -%}
+            {%- assign main_alt = product.featured_media.alt | default: product.title -%}
+            {{ product.featured_media | image_url: width: 1000 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '500, 750, 1000', sizes: '(min-width: 980px) 50vw, 100vw', alt: main_alt }}
+          {%- else -%}
+            <div class="placeholder placeholder-light">Product photo: upload a real image of this exact model</div>
+          {%- endif -%}
+        </div>
+        {%- if product.media.size > 1 -%}
+          <div class="gallery-thumbs">
+            {%- for media in product.media limit: 10 -%}
+              <button type="button" data-thumb="{{ media | image_url: width: 1000 }}" data-alt="{{ media.alt | escape }}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="Show image {{ forloop.index }}">
+                {{ media | image_url: width: 150 | image_tag: loading: 'lazy', alt: '' }}
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="product-info">
+        {%- if product.metafields.custom.format != blank %}<div class="eyebrow">{{ product.metafields.custom.format }}</div>{% endif -%}
+        <h1 style="font-size:clamp(28px,4vw,38px)">{{ product.title }}</h1>
+
+        <div class="product-price">
+          <span data-product-price>{{ current.price | money_without_trailing_zeros }}</span>
+          {%- if current.compare_at_price > current.price %}<s>{{ current.compare_at_price | money_without_trailing_zeros }}</s>{% endif -%}
+        </div>
+        <p style="font-size:13px;color:var(--muted)">Inclusive of taxes where applicable. Shipping is shown at checkout.</p>
+
+        {%- assign points = product.metafields.custom.key_points.value | default: product.metafields.custom.key_points -%}
+        {%- if points != blank -%}
+          <ul class="key-points">
+            {%- assign point_list = points | newline_to_br | split: '<br />' -%}
+            {%- for point in point_list -%}{%- assign t = point | strip | strip_newlines -%}{%- if t != blank -%}<li>{{ t }}</li>{%- endif -%}{%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- form 'product', product, id: 'product-form', data-product-form: '', data-currency: cart.currency.iso_code -%}
+          <input type="hidden" name="id" value="{{ current.id }}">
+          {%- unless product.has_only_default_variant -%}
+            {%- for option in product.options_with_values -%}
+              <div class="opt-group">
+                <fieldset>
+                  <legend>{{ option.name }}</legend>
+                  <div class="opt-values">
+                    {%- for value in option.values -%}
+                      <input type="radio" id="opt-{{ option.position }}-{{ forloop.index }}" name="option-{{ option.position }}" value="{{ value | escape }}" data-option {% if option.selected_value == value %}checked{% endif %}>
+                      <label for="opt-{{ option.position }}-{{ forloop.index }}">{{ value }}</label>
+                    {%- endfor -%}
+                  </div>
+                </fieldset>
+              </div>
+            {%- endfor -%}
+          {%- endunless -%}
+
+          <div class="buy-row">
+            <div class="qty">
+              <button type="button" data-qty-step="-1" aria-label="Decrease quantity">-</button>
+              <input type="number" name="quantity" value="1" min="1" aria-label="Quantity">
+              <button type="button" data-qty-step="1" aria-label="Increase quantity">+</button>
+            </div>
+            <button type="submit" class="btn btn-primary" style="flex:1" data-add-to-cart {% unless current.available %}disabled{% endunless %}>{% if current.available %}Add to cart{% else %}Sold out{% endif %}</button>
+          </div>
+          {{ form | payment_button }}
+          <div data-cart-status role="status" aria-live="polite" style="margin-top:12px"></div>
+        {%- endform -%}
+
+        <script type="application/json" id="product-variants-json">
+          [{%- for v in product.variants -%}{"id":{{ v.id }},"price":{{ v.price }},"available":{{ v.available }},"options":{{ v.options | json }}}{% unless forloop.last %},{% endunless %}{%- endfor -%}]
+        </script>
+
+        {%- if settings.promise_delivery != blank or settings.promise_warranty != blank or settings.promise_returns != blank -%}
+          <div class="promises">
+            {%- if settings.promise_delivery != blank %}<div><strong>Delivery</strong><br>{{ settings.promise_delivery }}</div>{% endif -%}
+            {%- if settings.promise_warranty != blank %}<div><strong>Warranty</strong><br>{{ settings.promise_warranty }}</div>{% endif -%}
+            {%- if settings.promise_returns != blank %}<div><strong>Returns</strong><br>{{ settings.promise_returns }}</div>{% endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- for block in section.blocks -%}
+          {%- if block.type == '@app' -%}{% render block %}{%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-buy" aria-hidden="false">
+  <div class="price" data-product-price>{{ current.price | money_without_trailing_zeros }}</div>
+  <a class="btn btn-primary" href="#product-form" onclick="document.querySelector('[data-add-to-cart]').scrollIntoView({block:'center'});return false;">Add to cart</a>
+</div>
+
+{% render 'product-json-ld', product: product %}
+{% schema %}
+{
+  "name": "Product",
+  "blocks": [
+    { "type": "@app" }
+  ]
+}
+{% endschema %}

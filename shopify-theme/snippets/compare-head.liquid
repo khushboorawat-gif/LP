@@ -1,0 +1,7 @@
+{%- comment -%} Table header cell content for the compare page. Params: p (product) {%- endcomment -%}
+<a href="{{ p.url }}" style="display:block">
+  {%- if p.featured_media -%}
+    {{ p.featured_media | image_url: width: 300 | image_tag: loading: 'lazy', alt: p.title, style: 'border-radius:12px;margin-bottom:10px;width:100%;max-width:220px' }}
+  {%- endif -%}
+  <span>{{ p.title }}</span>
+</a>

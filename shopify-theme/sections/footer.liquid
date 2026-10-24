@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo-text" style="color:#fff;margin-bottom:8px">{{ shop.name | upcase }}</div>
+        {%- if settings.legal_name != blank %}<div>{{ settings.legal_name }}</div>{% endif -%}
+        {%- if settings.business_address != blank %}<div>{{ settings.business_address | newline_to_br }}</div>{% endif -%}
+        {%- if settings.support_email != blank %}<a href="mailto:{{ settings.support_email }}">{{ settings.support_email }}</a>{% endif -%}
+        {%- if settings.support_phone != blank %}<a href="tel:{{ settings.support_phone | remove: ' ' }}">{{ settings.support_phone }}</a>{% endif -%}
+        {%- if settings.support_hours != blank %}<div>{{ settings.support_hours }}</div>{% endif -%}
+      </div>
+      <div>
+        <h3>{{ section.settings.col1_title }}</h3>
+        {%- for link in linklists[section.settings.col1_menu].links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- endfor -%}
+      </div>
+      <div>
+        <h3>{{ section.settings.col2_title }}</h3>
+        {%- for link in linklists[section.settings.col2_menu].links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- endfor -%}
+      </div>
+      <div>
+        <h3>Legal</h3>
+        {%- for policy in shop.policies -%}<a href="{{ policy.url }}">{{ policy.title }}</a>{%- endfor -%}
+        {%- if settings.social_instagram != blank %}<a href="{{ settings.social_instagram }}" rel="noopener">Instagram</a>{% endif -%}
+        {%- if settings.social_youtube != blank %}<a href="{{ settings.social_youtube }}" rel="noopener">YouTube</a>{% endif -%}
+        {%- if settings.social_facebook != blank %}<a href="{{ settings.social_facebook }}" rel="noopener">Facebook</a>{% endif -%}
+      </div>
+    </div>
+    <div class="footer-note">
+      &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}.
+      {%- if settings.gstin != blank %} GSTIN {{ settings.gstin }}.{% endif %}
+      Game names, logos and artwork of third parties are not used or implied.
+    </div>
+  </div>
+</footer>
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text", "id": "col1_title", "label": "Column 1 title", "default": "Shop" },
+    { "type": "link_list", "id": "col1_menu", "label": "Column 1 menu", "default": "main-menu" },
+    { "type": "text", "id": "col2_title", "label": "Column 2 title", "default": "Help" },
+    { "type": "link_list", "id": "col2_menu", "label": "Column 2 menu", "default": "footer" }
+  ]
+}
+{% endschema %}

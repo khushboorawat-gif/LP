@@ -1,0 +1,23 @@
+{%- assign has_any = false -%}
+{%- if settings.promise_delivery != blank or settings.promise_warranty != blank or settings.promise_returns != blank or settings.promise_payments != blank -%}{%- assign has_any = true -%}{%- endif -%}
+{%- if has_any -%}
+<section class="section" style="padding-bottom:0">
+  <div class="container">
+    <div class="grid grid-4">
+      {%- if settings.promise_delivery != blank %}<div class="trust"><strong>Delivery</strong><span>{{ settings.promise_delivery }}</span></div>{% endif -%}
+      {%- if settings.promise_warranty != blank %}<div class="trust"><strong>Warranty</strong><span>{{ settings.promise_warranty }}</span></div>{% endif -%}
+      {%- if settings.promise_returns != blank %}<div class="trust"><strong>Returns</strong><span>{{ settings.promise_returns }}</span></div>{% endif -%}
+      {%- if settings.promise_payments != blank %}<div class="trust"><strong>Payments</strong><span>{{ settings.promise_payments }}</span></div>{% endif -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Service strip",
+  "settings": [
+    { "type": "paragraph", "content": "Content comes from Theme settings > Service promises. Empty items are hidden." }
+  ],
+  "presets": [{ "name": "Service strip" }]
+}
+{% endschema %}

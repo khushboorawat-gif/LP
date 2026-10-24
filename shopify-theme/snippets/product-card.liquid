@@ -1,0 +1,35 @@
+{%- comment -%}
+  Product card. Params: product
+  Shows only data that exists: the one-line summary comes from the custom.card_summary metafield.
+{%- endcomment -%}
+{%- assign p = product -%}
+<article class="card">
+  <a class="card-media" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+    {%- if p.featured_media -%}
+      {%- assign card_alt = p.featured_media.alt | default: p.title -%}
+      {{ p.featured_media | image_url: width: 600 | image_tag: loading: 'lazy', widths: '300, 450, 600', sizes: '(min-width: 980px) 25vw, 50vw', alt: card_alt }}
+    {%- else -%}
+      <div class="placeholder placeholder-light">Product photo</div>
+    {%- endif -%}
+  </a>
+  <div class="card-body">
+    {%- if p.metafields.custom.format != blank -%}<div class="card-type">{{ p.metafields.custom.format }}</div>{%- endif -%}
+    <a class="card-title" href="{{ p.url }}">{{ p.title }}</a>
+    {%- if p.metafields.custom.card_summary != blank -%}<div class="card-line">{{ p.metafields.custom.card_summary }}</div>{%- endif -%}
+    <div class="card-foot">
+      <div class="price">
+        {{ p.price | money_without_trailing_zeros }}
+        {%- if p.compare_at_price > p.price %}<s>{{ p.compare_at_price | money_without_trailing_zeros }}</s>{% endif -%}
+      </div>
+      {%- unless p.available -%}<span class="badge badge-out">Sold out</span>{%- endunless -%}
+      {%- if p.available and p.variants.size == 1 -%}
+        {%- form 'product', p -%}
+          <input type="hidden" name="id" value="{{ p.first_available_variant.id }}">
+          <button type="submit" class="btn btn-primary btn-block">Add to cart</button>
+        {%- endform -%}
+      {%- elsif p.available -%}
+        <a class="btn btn-outline btn-block" href="{{ p.url }}">Choose option</a>
+      {%- endif -%}
+    </div>
+  </div>
+</article>

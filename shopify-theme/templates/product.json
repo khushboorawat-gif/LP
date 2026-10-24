@@ -1,0 +1,7 @@
+{
+  "sections": {
+    "main": { "type": "product-main", "blocks": {}, "block_order": [], "settings": {} },
+    "details": { "type": "product-details", "blocks": {}, "block_order": [], "settings": {} }
+  },
+  "order": ["main", "details"]
+}
