@@ -9,11 +9,11 @@ Status: INCOMPLETE. Flipkart could not be fetched from this environment (DNS fai
 | GS5 Pro TV game console | Many Flipkart listings titled "GS5 Pro ... Limited", one described as "Timkolas GS5 Pro Wireless TV Video Game with 4K HD Output and 53 Emulators"; also a "25th Anniversary Edition" variant | Needs page-level confirmation of which listings are actually Timkolas |
 | 2.4G wireless TV game stick (23 emulators) | Snippet: "Timkolas 2.4G Wireless TV Video Game With 4K HD Output & 23 Emulator", one price snippet near Rs 1,568 vs Rs 4,999 list; title also mentions 30,000+ games | Unverified. Game count is a title claim |
 | Wireless gamepads (X3, A1, Z1 series, RGB model) | Flipkart listings for Android, PC, SmartTV, cloud gaming | Confirmed to exist as Timkolas controllers. These are accessories, not consoles |
-| Handheld console with screen | No Timkolas handheld found in two searches | NOT FOUND. Do not build a handheld collection until a real listing is located |
-| Mini arcade | Not found | NOT FOUND |
+| Handheld console with screen | CORRECTED: J36S handheld exists (see 02-flipkart-listing-catalog.md) | Confirmed to exist on Flipkart, specs unverified |
+| Mini arcade | CORRECTED: M66 mini arcade exists (see 02-flipkart-listing-catalog.md) | Confirmed to exist on Flipkart, specs unverified |
 | M15 game stick "PlayAxis Pro bundle" | Appears in results, brand unclear | Possibly another seller's rebrand |
 
-Catalog implication: the brief assumed handheld and mini arcade lines. Evidence so far supports only TV game sticks and controllers. Collections to launch with: TV Game Sticks, Controllers. Add others only after a real listing is found.
+Catalog implication: superseded by docs/research/02-flipkart-listing-catalog.md, which lists 12 product families including a handheld and a mini arcade.
 
 ## 2. Price signals (snippets, undated, do not publish)
 
